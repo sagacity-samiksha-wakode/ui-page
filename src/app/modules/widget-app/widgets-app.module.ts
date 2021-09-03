@@ -2,6 +2,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { BarChartComponent } from './bar-chart/bar-chart.component';
 import {CdkTableModule} from '@angular/cdk/table';
+import { ChartsModule } from 'ng2-charts';
 import { CommonModule } from '@angular/common';
 import { CompanyFormComponent } from './company/company-form/company-form.component';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
@@ -45,7 +46,8 @@ import { RadioButtonComponent } from './radio-button/radio-button.component';
     MatButtonToggleModule,
     MatProgressSpinnerModule,
     MatRadioModule,
-    CdkTableModule
+    CdkTableModule,
+    ChartsModule
 
 
   ],

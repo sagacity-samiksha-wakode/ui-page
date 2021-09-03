@@ -20,3 +20,15 @@
   /* font-weight: bold; */
   font-size: 11px;
 }
+
+::ng-deep .mat-progress-bar-fill::after {
+  background-color: #418B12;
+}
+
+::ng-deep .mat-progress-bar-buffer {
+  background: #bbc0c4;
+}
+
+::ng-deep .mat-progress-bar {
+  border-radius: 2px;
+}

@@ -1,5 +1,9 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-declare var google: any;
+import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
+
+import { Label } from 'ng2-charts';
+
+// declare var google: any;
 @Component({
   selector: 'app-bar-chart',
   templateUrl: './bar-chart.component.html',
@@ -11,46 +15,19 @@ export class BarChartComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  @ViewChild('pieChart') pieChart: ElementRef
 
-  drawChart = () => {
+public barChartOptions: ChartOptions = {
+  responsive: true,
+};
+public barChartLabels: Label[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
+public barChartType: ChartType = 'bar';
+public barChartLegend = true;
+public barChartPlugins = [];
 
-  const data = google.visualization.arrayToDataTable([
-    ['Task', 'Hours per Day'],
-    ['Work', 11],
-    ['Eat', 2],
-    ['Commute', 2],
-    ['Watch TV', 2],
-    ['Sleep', 7]
-  ]);
 
-  const options = {
-    title: 'My Daily Activities',
-    legend: {position: 'top'}
-  };
+public barChartData: ChartDataSets[] = [
+  { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' ,backgroundColor: '#3E6FB6', hoverBorderColor: '#406EB5', borderColor: '#000',hoverBackgroundColor:"lightblue"},
+  // { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' }
+];
+    }
 
-  const chart = new google.visualization.PieChart(this.pieChart.nativeElement);
-
-  chart.draw(data, options);
-}
-
-  ngAfterViewInit() {
-    google.charts.load('current', { 'packages': ['corechart'] });
-    google.charts.setOnLoadCallback(this.drawChart);
-  }
-//    drawChart() {
-//   // Define the chart to be drawn.
-//   var data = new google.visualization.DataTable();
-//   data.addColumn('string', 'Element');
-//   data.addColumn('number', 'Percentage');
-//   data.addRows([
-//     ['Nitrogen', 0.78],
-//     ['Oxygen', 0.21],
-//     ['Other', 0.01]
-//   ]);
-
-//   // Instantiate and draw the chart.
-//   var chart = new google.visualization.PieChart(document.getElementById('myPieChart'));
-//   chart.draw(data, null);
-// }
-}

@@ -9,16 +9,12 @@ import { DatePipe } from '@angular/common';
 import { HttpErrorInterceptorService } from './http-error-interceptor.service';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { MaterialModule } from './materials/material.module';
 import { NgModule } from '@angular/core';
 import { NotificationService } from './services/common/notification.service';
 import { ServerApiInterfaceServiceService } from './services/common/server-api-interface-service.service';
 import { ToastrModule } from 'ngx-toastr';
 import { WidgetAppModule } from './modules/widget-app/widgets-app.module';
-
-// import { GoogleChartsModule } from 'angular-google-charts';
-
 
 @NgModule({
   declarations: [
@@ -31,9 +27,6 @@ import { WidgetAppModule } from './modules/widget-app/widgets-app.module';
     BrowserAnimationsModule,
     MaterialModule,
     WidgetAppModule,
-    MatButtonToggleModule,
-    // GoogleChartsModule,
-
     HttpClientModule,
     ToastrModule.forRoot({
       timeOut: 3000,

@@ -1,26 +1,20 @@
 import {BehaviorSubject, Observable} from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 
-import {DataSource} from '@angular/cdk/collections';
-
 export interface PeriodicElement {
-  Due: number;
-  position: string;
-  Actioned: number;
-  outstanding: number;
+  name: string;
+  position: number;
+  weight: number;
+  symbol: number;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: "Work Strart", Due: 0, Actioned: 3, outstanding: 8},
-  {position: "Work Stop", Due: 8, Actioned: 10, outstanding: 3},
-  {position: "Variations", Due: 4, Actioned: 8, outstanding: 1},
-  {position: "Registrations", Due: 1, Actioned: 2, outstanding: 5},
-
-
+  {name: 'Hydrogen', position: 1, weight: 2, symbol:5},
+  {position: 2, name: 'Helium', weight:5, symbol:6},
+  {position: 3, name: 'Lithium', weight: 6, symbol: 5},
+  {position: 4, name: 'Beryllium', weight: 9, symbol: 4},
 
 ];
-
-
 
 
 
@@ -36,8 +30,8 @@ export class PerformanceTableComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  displayedColumns: string[] = ['position', 'Due', 'Actioned', 'outstanding'];
-  dataSource = new ExampleDataSource();
+  displayedColumns: string[] = ['name' ,'position', 'weight', 'symbol'];
+  dataSource = ELEMENT_DATA;
 }
 
 /**
@@ -47,17 +41,8 @@ export class PerformanceTableComponent implements OnInit {
  * the underlying data. Instead, it only needs to take the data and send the table exactly what
  * should be rendered.
  */
-export class ExampleDataSource extends DataSource<PeriodicElement> {
-  /** Stream of data that is provided to the table. */
-  data = new BehaviorSubject<PeriodicElement[]>(ELEMENT_DATA);
 
-  /** Connect function called by the table to retrieve one stream containing the data to render. */
-  connect(): Observable<PeriodicElement[]> {
-    return this.data;
-  }
 
-  disconnect() {}
-}
 
 
 

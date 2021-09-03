@@ -1,5 +1,18 @@
-<div  #pieChart style="width: auto; height: 45vh;"></div>
+<!-- <div  #pieChart style="width: auto; height: 45vh;"></div> -->
 <!-- <div id="chart-div" style="width: 70px; height: 50px;"></div> -->
 
 
 <!-- <div id="myPieChart"></div> -->
+
+
+<div style="display: block; ">
+  <canvas baseChart
+    [datasets]="barChartData"
+    [labels]="barChartLabels"
+    [options]="barChartOptions"
+    [plugins]="barChartPlugins"
+    [legend]="barChartLegend"
+    [chartType]="barChartType"
+   >
+  </canvas>
+</div>

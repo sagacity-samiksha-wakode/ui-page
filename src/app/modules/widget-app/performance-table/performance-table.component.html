@@ -1,30 +1,34 @@
-<table class="example-table" cdk-table recycleRows [dataSource]="dataSource">
-  <!-- Position Column -->
-  <ng-container cdkColumnDef="position">
-    <th class="example-row" cdk-header-cell *cdkHeaderCellDef>  </th>
-    <td cdk-cell *cdkCellDef="let element" example-button-row> <button mat-stroked-button class="border-color" >
-      {{element.position}}</button> </td>
+<table mat-table [dataSource]="dataSource" >
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+         <!-- Name Column -->
+  <ng-container matColumnDef="name" >
+    <p mat-header-cell *matHeaderCellDef> </p>
+    <td mat-cell *matCellDef="let element"> <p style="border: 1px #3C6BAF solid;color:#3C6BAF; border-radius: 10px;text-align: center;font-size: 12px;text-indent: 1;margin-top: 20px;">{{element.name}}</p> </td>
   </ng-container>
 
-  <!-- Name Column -->
-  <ng-container cdkColumnDef="Due">
-    <th class="example-row th-color1" cdk-header-cell *cdkHeaderCellDef > Due </th>
-    <td cdk-cell *cdkCellDef="let element"> {{element.Due}} </td>
+  <!-- Position Column -->
+  <ng-container matColumnDef="position">
+    <th class="th-color1" mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
   </ng-container>
+
+
 
   <!-- Weight Column -->
-  <ng-container cdkColumnDef="Actioned">
-    <th class="example-row th-color2" cdk-header-cell *cdkHeaderCellDef> Actioned </th>
-    <td cdk-cell *cdkCellDef="let element"> {{element.Actioned}} </td>
+  <ng-container matColumnDef="weight">
+    <th class="th-color2" mat-header-cell *matHeaderCellDef> Weight </th>
+    <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
   </ng-container>
 
   <!-- Symbol Column -->
-  <ng-container cdkColumnDef="outstanding">
-    <th class="example-row th-color3" cdk-header-cell *cdkHeaderCellDef> outstanding </th>
-    <td cdk-cell *cdkCellDef="let element"> {{element.outstanding}} </td>
+  <ng-container matColumnDef="symbol">
+    <th class="th-color3" mat-header-cell *matHeaderCellDef> Symbol </th>
+    <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
   </ng-container>
 
-  <tr cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>
-  <tr cdk-row *cdkRowDef="let row; columns: displayedColumns;"></tr>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-

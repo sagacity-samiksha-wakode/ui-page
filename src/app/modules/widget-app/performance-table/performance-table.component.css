@@ -4,16 +4,14 @@ table {
 
 th {
   text-align: center;
-  /* margin-right: 5px;
-  margin-bottom: 5px;
-  margin-left: 5px; */
+
   font-weight: 400;
 }
 
 td{
   text-align: center;
-  font-weight: 700;
-
+  /* font-weight: 600; */
+/* margin: 20px; */
 
 
 }
@@ -23,18 +21,20 @@ td{
   border-color: #3C6BAF;
   border-radius: 20px;
   font-size: 12px;
-  margin-right: 25px;
+  /* margin-right: 25px;
 
-  margin-left: 1px;
+  margin-left: 1px; */
   color: #3C6BAF;
   font-weight: 500;
+
 
 }
 .th-color1{
   background-color:#F0B018 ;
   color: #fff;
   font-size: 12px;
- margin: 4px;
+ /* margin: 4px; */
+ text-align: center;
 
 }
 
@@ -42,9 +42,11 @@ td{
   background-color:#418B12 ;
   color: #fff;
   font-size: 12px;
+  text-align: center;
 }
 .th-color3{
   background-color:#DC2C2B ;
   color: #fff;
   font-size: 12px;
+  text-align: center;
 }
