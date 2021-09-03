@@ -1,0 +1,27 @@
+<!-- <mat-card class="progress-bar" > -->
+  <div class="row m-0">
+      <div class="col-12">
+        <div class="row justify-content-center align-self-center">
+          <div class="row">
+            <div class="col-10">
+              <span class="performance-card-lable" fxLayout="row" fxLayoutAlign="left left" [ngStyle]="{color:dataModel.data.countColor}">
+                {{dataModel.data.text}}
+                   </span>
+
+            </div>
+           <div class="col-2">
+            <div class="card-count" fxFlex="50" fxLayout="row" fxLayoutAlign="right right " [ngStyle]="{color:dataModel.data.countColor}">
+              {{dataModel.data.count}}
+                </div>
+           </div>
+          </div>
+
+                <mat-progress-bar mode="determinate" >
+                  <div class="card-count" fxFlex="50"  fxLayout="row" fxLayoutAlign="right right " [ngStyle]="{color:dataModel.data.valueColor}">
+                      {{dataModel.data.value}}
+                </div>
+              </mat-progress-bar>
+            </div>
+          </div>
+        </div>
+<!-- </mat-card> -->

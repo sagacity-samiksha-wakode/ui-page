@@ -1,0 +1,25 @@
+<mat-card class="performance-card text-center" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" fxFlex="100%" [ngStyle]="{background:dataModel.data.backgroundColor}">
+
+    <div [ngStyle]="{color:dataModel.data.countColor,'width':'100%'}" class="mb-0" fxLayout="row" fxLayoutAlign="space-between center">
+        <!-- <div fxFlex="50" fxLayout="row" fxLayoutAlign="center center">
+            <mat-icon [inline]="true" class="count-icon">
+                {{dataModel.data.icon}}
+
+            </mat-icon>
+            <ng-template #showImg>
+                <img [src]="dataModel.data.icon" alt="_ic_count" width="60px" height="60px">
+            </ng-template>
+        </div> -->
+        <div fxFlex="50" fxLayout="row" fxLayoutAlign="center center " [ngStyle]="{color:dataModel.data.countColor}">
+            <!-- <span class="card-count" [ngStyle]="{color:dataModel.data.countColor}">
+                &#163; {{dataModel.data.count}}
+              </span> -->
+              {{dataModel.data.count}}
+        </div>
+    </div>
+
+    <span class="performance-card-lable" fxLayout="row" fxLayoutAlign="center center" [ngStyle]="{color:dataModel.data.countColor}">
+        {{dataModel.data.text}}
+        <!-- dfasdfas -->
+    </span>
+</mat-card>

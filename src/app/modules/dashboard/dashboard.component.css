@@ -1,0 +1,11 @@
+.headingtitle {
+    font-size: 13px;
+    padding-bottom: 3px;
+    color: #3C6BAF;
+    font-weight: 800;
+}
+
+.mat-card
+{
+border-radius: 15px;
+}
