@@ -1,7 +1,9 @@
-import { Injectable } from '@angular/core';
-import { AbstractControl, Validators, FormGroup, FormBuilder, FormControl, ValidationErrors, ValidatorFn } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { ValidationModel, ValidatorsModel } from 'src/app/models/common/validators.model';
+
+import { Injectable } from '@angular/core';
 import { WidgetHelper } from 'src/app/modules/widget-utility/widget-helper';
+
 export function customRequiredValidator(control: AbstractControl): ValidationErrors | null {
     if (control) {
         (control as any).isRequired = true;
@@ -30,7 +32,7 @@ export class ValidationService {
             if(this){
                 (this as any).isRequired = false;
             }
-            
+
             _clearValidators.call(this);
         }
     }
@@ -109,7 +111,7 @@ export class ValidationService {
             case "IndiaPhonePattern":
                     validation.defaultMessage = 'Please enter a valid phone number';
                     return ValidationService.validatorFn(validation, Validators.pattern('^(\\+91[\\-\\s]?)?[0]?(91)?[0123456789]\\d{9}$'));
-                
+
 
         }
     }
@@ -136,7 +138,7 @@ export class ValidationService {
 
                 let field1Value = group.get(validation.field1) ? group.get(validation.field1).value : null;
                 let field2Value = group.get(validation.field2) ? group.get(validation.field2).value : null;
-                
+
                 switch(validation.dataType)
                 {
                     case "number":
