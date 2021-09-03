@@ -1,10 +1,9 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams, HttpEventType } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpEventType, HttpHeaders, HttpParams } from '@angular/common/http';
 
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { map } from 'rxjs/operators';
-
 
 export class ServerAPIErrorModel {
   handled: boolean;
@@ -32,7 +31,7 @@ export class ServerApiInterfaceServiceService {
         {
           'Content-Type': 'application/json'
         }),
-      
+
       params: new HttpParams()
     };
 
@@ -48,7 +47,7 @@ export class ServerApiInterfaceServiceService {
     offset = `${offset * (-1)}`;
     headers =  new HttpHeaders({
       ClientTZOffSet:  offset
-    }); 
+    });
     let httpOptions = {
       headers: headers ? headers : new HttpHeaders(),
       params: new HttpParams()
@@ -68,7 +67,7 @@ export class ServerApiInterfaceServiceService {
     headers =  new HttpHeaders({
       ClientTZOffSet:  offset,
       Token: token
-    }); 
+    });
     let httpOptions = {
       headers: headers ? headers : new HttpHeaders(),
       params: new HttpParams()
@@ -83,7 +82,7 @@ export class ServerApiInterfaceServiceService {
 
   put<T, R>(url:any, data:any): Observable<R> {
     const uploadURL = environment.baseurl + url;
-    
+
     /*This code can be workout in next branch */
     // if(data)
     // {
@@ -96,7 +95,7 @@ export class ServerApiInterfaceServiceService {
    offset = `${offset * (-1)}`;
     let headers =  new HttpHeaders({
      ClientTZOffSet:  offset
-   }); 
+   });
 
     return this.http.post<any>(uploadURL, data, {
       reportProgress: true,
@@ -112,12 +111,12 @@ export class ServerApiInterfaceServiceService {
 
         case HttpEventType.Response:
           return event.body;
-        
+
           case HttpEventType.Sent:
           console.log(event);
           break
         break;
-        
+
         default:
          console.log( `Unhandled event: ${event.type}`);
       }
@@ -131,7 +130,7 @@ export class ServerApiInterfaceServiceService {
       headers: new HttpHeaders(
         {
             'Content-Type': 'application/json',
-         
+
         }),
        responseType: 'blob'
     });
@@ -142,13 +141,13 @@ export class ServerApiInterfaceServiceService {
     return this.http.post(environment.baseurl + url, request, {observe: 'body', responseType: 'blob'});
   }
 
-  
+
   downloadTextFile(url: string, queryParams?: any) : Observable<any>{
     return this.http.get(environment.baseurl + url + '?reqparams=' + JSON.stringify(queryParams), {
       headers: new HttpHeaders(
         {
             'Content-Type': 'application/json',
-         
+
         }),
        responseType: 'text'
     });
