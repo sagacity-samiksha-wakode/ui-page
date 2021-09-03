@@ -1,13 +1,19 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import { Router } from '@angular/router';
-import { WidgetConstants } from 'src/app/modules/widget-utility/widget-constants';
-import { MethodCall } from '@angular/compiler';
-import { ErrorCodes } from 'src/app/models/common/error-codes';
-// import { ServerApiInterfaceServiceService } from 'src/app/server-api-interface-service.service';
-import { NotificationService } from './notification.service';
-import { AppRepoHelperService } from 'src/app/services/common/app-repo-helper.service';
+
 import { APP_SETTING } from 'src/app/constants/app-repo.constants';
+import { AppRepoHelperService } from 'src/app/services/common/app-repo-helper.service';
+import { ErrorCodes } from 'src/app/models/common/error-codes';
+import { MethodCall } from '@angular/compiler';
+import { NotificationService } from './notification.service';
+import { Router } from '@angular/router';
 import { ServerApiInterfaceServiceService } from './server-api-interface-service.service';
+import { WidgetConstants } from 'src/app/modules/widget-utility/widget-constants';
+
+// import { ServerApiInterfaceServiceService } from 'src/app/server-api-interface-service.service';
+
+
+
+
 
 @Injectable({
     providedIn: 'root'
@@ -85,27 +91,27 @@ export class EventActionService implements OnDestroy {
             if (params[0].dataposition) {
                 eventparams.positions = params[0].dataposition
         }
-    
+
             params.forEach((param:any) => {
                 if (param.skipSpinner) {
                     skipSpinner = param.skipSpinner
                 }
             })
             try {
-    
+
                 eventparams.positions.forEach((position:any) => {
                     var compInstance = this.compRefInstancesMap.get(position);
                     if(compInstance && compInstance.GetValue){
                         const data = compInstance.GetValue();
                         Object.assign(submitData, data);
                     }
-                   
+
                 });
-    
+
                 const apiUrlConst = eventparams.apiSubmitUrl;
                 if (!skipSpinner) {
                     page.showSpinner()
-                } 
+                }
                 this._serverApi.post<any, any>(apiUrlConst, submitData).subscribe(
                     response => {
                         if (!skipSpinner) {
@@ -126,16 +132,16 @@ export class EventActionService implements OnDestroy {
                         if (!skipSpinner) {
                             page.hideSpinner();
                         }
-    
+
                         this._notificationService.error("Something went wrong!");
-                       
+
                     }
                 );
-    
+
             } catch (e) {
                 console.error("ActionHtmlToPdfFileDownload error:", e);
             }
-    
+
     }
     ActionHtmlToPdfFilePrint(wigDataContext: any, params: any, eventparams: any) {
 
@@ -167,14 +173,14 @@ export class EventActionService implements OnDestroy {
                     const data = compInstance.GetValue();
                     Object.assign(submitData, data);
                 }
-               
+
             });
 
             const apiUrlConst = eventparams.apiSubmitUrl;
             if (!skipSpinner) {
                 page.showSpinner()
             }
-          
+
 
             this._serverApi.post<any, any>(apiUrlConst, submitData).subscribe(
                 response => {
@@ -200,7 +206,7 @@ export class EventActionService implements OnDestroy {
                     }
 
                     this._notificationService.error("Something went wrong!");
-                   
+
                 }
             );
 
@@ -213,20 +219,20 @@ export class EventActionService implements OnDestroy {
     ActionCopyWidgetData(wigDataContext: any, params: any, eventparams: any){
         try {
             if (params[0]) {
-                params[0].positions.forEach((item:any) => {                     
+                params[0].positions.forEach((item:any) => {
                     const srcCompInstance = this.compRefInstancesMap.get(item.src);
                     const data = srcCompInstance.GetValue();
 
                     const targCompInstance = this.compRefInstancesMap.get(item.target);
                     targCompInstance.setFormData(data, eventparams);
-               
-                });               
+
+                });
             }
         }
         catch {
             console.error("Error : error occured while copying form data", eventparams)
         }
-       
+
     }
 
     getEventHandler(eventName: string) {
@@ -237,11 +243,11 @@ export class EventActionService implements OnDestroy {
         }
     }
 
-    
+
     NavigateExternalURL(wigDataContext: any, params: any, eventparams: any){
 
         try{
-            let page = this.instance; 
+            let page = this.instance;
             let locationcode = params.locationcode;
 
             let urlData = this._helperService.getAppSTByCode(locationcode.code);
@@ -259,12 +265,12 @@ export class EventActionService implements OnDestroy {
 
         //Static Keys is parameterized key passed to the navigation data
         let statickeys = params.staticKeys;
-        //Get value of these keys from event params        
+        //Get value of these keys from event params
         let eventParamKeys = params.eventParamKeys;
         let globalParamKeys = params.globalParamKeys;
         let location = params.location;
 
-        let page = this.instance;     
+        let page = this.instance;
         let navigationData = new Map<string,object>();
         let globalNavigationKeys:any =[];
 
@@ -286,7 +292,7 @@ export class EventActionService implements OnDestroy {
             return obj;
         }
 
-        eventParamKeys.forEach((item:any) => {           
+        eventParamKeys.forEach((item:any) => {
             navigationData.set(item.setKey,findProp(eventparams.dataContext, item.getKey));
         });
 
@@ -296,10 +302,10 @@ export class EventActionService implements OnDestroy {
 
         navigationData.forEach((value,key) => {
             globalNavigationKeys.push(key);
-            this.instance.globalParameters.set(key,value);   
+            this.instance.globalParameters.set(key,value);
         });
 
-        this.instance.globalParameters.set("navigationDataKeys",globalNavigationKeys);    
+        this.instance.globalParameters.set("navigationDataKeys",globalNavigationKeys);
 
         if(location.path){
             this._router.navigate([params.location.path]);
@@ -323,12 +329,12 @@ export class EventActionService implements OnDestroy {
         this._router.navigate([params.location, navigationData]);
     }
 
-   
+
 
     ActionSetNavigationData(wigDataContext: any, params: any, eventparams: any) {
         let keys = params.globalParamKeys;
-        let page = this.instance;      
-        page.globalParameters["navigationDataKeys"] = keys;    
+        let page = this.instance;
+        page.globalParameters["navigationDataKeys"] = keys;
     }
 
     ActionProcessSubmitResponseSetKey(wigDataContext: any, params: any, eventparams: any) {
@@ -342,7 +348,7 @@ export class EventActionService implements OnDestroy {
         if (!eventparams.dataContext) {
             eventparams.dataContext = {}
         }
-       
+
         eventparams.dataContext[params.getkey] = eventparams.reqData[params.getkey]
     }
 
@@ -424,7 +430,7 @@ export class EventActionService implements OnDestroy {
 
 
 
-    //Info: Here this refers to the caller componet hence any variable with "this." should be present 
+    //Info: Here this refers to the caller componet hence any variable with "this." should be present
     //caller compoent with same variable name e.g. in this case  "_router" should be present in caller
 
     // apply filter action
@@ -451,7 +457,7 @@ export class EventActionService implements OnDestroy {
     //             }
     //             page.collapse = true;
     //             var filterData = filterCompInstance.GetValue();
-               
+
     //             //gridCompInstance.dataModel.apireqdata.wf = 'filter';
     //             if(gridCompInstance){
     //             targ = gridCompInstance.dataModel;
@@ -504,7 +510,7 @@ export class EventActionService implements OnDestroy {
         });
     }
 
-  
+
 
     // refresh widget data
     ActionRefreshData(wigDataContext: any, params: any, eventparams: any) {
@@ -523,7 +529,7 @@ export class EventActionService implements OnDestroy {
 
                 const compInstance = page.compRefInstancesMap.get(position);
                 targ = compInstance.dataModel;
-          
+
                 let refreshEventName;
                 Object.keys(param).forEach((key) => {
                     eval(`${key} = ${param[key]}`);
@@ -532,14 +538,14 @@ export class EventActionService implements OnDestroy {
                 let data = eventparams.reqData;
                 if(data){
                     data.eventparamsData = eventparams;
-                }               
+                }
                 compInstance.configModel.CallerToComp.emit(refreshEventName, data);
 
             } catch (e) {
                 console.error("ActionRefreshAnyEventAction error:", e);
             }
         });
-       
+
     }
 
     ActionDynamicMethod(wigDataContext: any, params: any, eventparams: any) {
@@ -685,7 +691,7 @@ export class EventActionService implements OnDestroy {
                     compInstance = page.compRefInstancesMap.get(position);
                     if(compInstance){
                         targ = compInstance.dataModel;
-                    }                    
+                    }
                 }
 
                 Object.keys(param).forEach((key) => {
@@ -729,7 +735,7 @@ export class EventActionService implements OnDestroy {
     //     let skipSpinner:any;
     //     let reqData = Object();
     //     reqData.data = Object();
-        
+
     //     if (params.downloadKey instanceof Array) {
     //         params.downloadKey.forEach((element:any) => {
     //             reqData.data[element]=eventparams[element]
@@ -738,7 +744,7 @@ export class EventActionService implements OnDestroy {
     //     else {
     //         reqData.data.nodelist = eventparams[params.downloadKey];
     //     }
-        
+
     //     const downloadApiUrl = wigDataContext.downloadApiUrl ? wigDataContext.downloadApiUrl:"/v1/utility/downloadfile";
     //     if (params.skipSpinner) {
     //         skipSpinner = params.skipSpinner
@@ -766,7 +772,7 @@ export class EventActionService implements OnDestroy {
     //     let skipSpinner;
     //     let reqData = Object();
     //     reqData.data = Object();
-        
+
     //     if (params.downloadKey instanceof Array) {
     //         params.downloadKey.forEach(element => {
     //             reqData.data[element]=eventparams[element]
@@ -775,7 +781,7 @@ export class EventActionService implements OnDestroy {
     //     else {
     //         reqData.data.nodelist = eventparams[params.downloadKey];
     //     }
-        
+
     //     const downloadApiUrl = wigDataContext.downloadApiUrl ? wigDataContext.downloadApiUrl:"/v1/utility/downloadfile";
     //     if (params.skipSpinner) {
     //         skipSpinner = params.skipSpinner
@@ -798,7 +804,7 @@ export class EventActionService implements OnDestroy {
     //             });
     // }
 
-    
+
     // ActionExport(wigDataContext: any, params: any, eventparams: any) {
     //     let page = this.instance;
     //     let skipSpinner;
@@ -823,8 +829,8 @@ export class EventActionService implements OnDestroy {
     //                 }
     //                 page.collapse = true;
     //                 filterData = filterCompInstance.GetValue();
-    //             }                
-               
+    //             }
+
     //             if(gridCompInstance){
     //             targ = gridCompInstance.dataModel;
     //             Object.keys(param).forEach((key) => {
@@ -839,7 +845,7 @@ export class EventActionService implements OnDestroy {
     //             console.error("ActionExport error:", e);
     //         }
     //     });
-  
+
     //     const exportApiUrl = "/v1/widget/getwidgetexceldata";
     //     if (params.skipSpinner) {
     //         skipSpinner = params.skipSpinner
@@ -847,7 +853,7 @@ export class EventActionService implements OnDestroy {
     //     if (!skipSpinner) {
     //         page.showSpinner()
     //     }
- 
+
     //     const exportCurrentDate = new Date().toLocaleDateString();
     //     this._serverApi.exportFile(exportApiUrl, reqData.data)
     //         .subscribe(response => {
@@ -907,7 +913,7 @@ export class EventActionService implements OnDestroy {
                         isValid = isvalid;
                     }
                 }
-               
+
             });
 
             if (!isValid) { return; }
@@ -918,7 +924,7 @@ export class EventActionService implements OnDestroy {
                     const data = compInstance.GetValue();
                     Object.assign(submitData, data);
                 }
-               
+
             });
 
             const apiUrlConst = eventparams.apiSubmitUrl;
@@ -952,7 +958,7 @@ export class EventActionService implements OnDestroy {
                     }
 
                     this._notificationService.error("Something went wrong!");
-                   
+
                 }
             );
 
@@ -1007,7 +1013,7 @@ export class EventActionService implements OnDestroy {
     //                     isValid = isvalid;
     //                 }
     //             }
-                
+
     //         });
 
     //         if (!isValid) { return; }
@@ -1018,7 +1024,7 @@ export class EventActionService implements OnDestroy {
     //                 const data = compInstance.GetValue();
     //                 Object.assign(submitData, data);
     //             }
-                
+
     //         });
 
     //         formData.append('requestData', JSON.stringify(submitData));
@@ -1092,7 +1098,7 @@ export class EventActionService implements OnDestroy {
                 if (keyname) {
                     let position = param[keyname].replace(/'/g, "");
                     compInstance = page.compRefInstancesMap.get(position);
-                    
+
                     if (compInstance && compInstance.GetValue){
                         const data = compInstance.GetValue();
 
@@ -1110,8 +1116,8 @@ export class EventActionService implements OnDestroy {
                             event.action = "onsubmitwithuserdata";
                             page._eventActionService.ActionHandler(wigDataContext, event, page, eventparams, posteventaction);
                         }
-                    }                 
-                }    
+                    }
+                }
                 } catch (e) {
                     console.error("ActionSubmitDataWithOrWithoutFileupload error:", e);
                 }
@@ -1122,14 +1128,14 @@ export class EventActionService implements OnDestroy {
         }
 
     }
-   
+
     ActionOnSubmit(wigDataContext: any, params: any, eventparams: any, posteventaction: any) {
 
         let instance = this;
 
         let page = this.instance;
         let src = eventparams;
-        let targ:any;  
+        let targ:any;
         let req = Object();
         let skipSpinner:any;
         params.forEach((param:any) => {
@@ -1167,7 +1173,7 @@ export class EventActionService implements OnDestroy {
 
 
             });
-        
+
             const apiUrlConst = targ.submitProperties.apiSubmitUrl;
             if (!skipSpinner) {
                 page.showSpinner()
@@ -1232,7 +1238,7 @@ export class EventActionService implements OnDestroy {
     //             this._saveFileService.saveExcelFile(data, fileName)
     //             break;
     //     }
-       
+
     // }
 
     // ActionSaveZipFile(wigDataContext: any, params: any, eventparams: any) {
@@ -1260,7 +1266,7 @@ export class EventActionService implements OnDestroy {
     //             this._saveFileService.saveZipFileV2(data, fileName)
     //             break;
     //     }
-       
+
     // }
 
     ngOnDestroy(): void {

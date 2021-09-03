@@ -5,7 +5,8 @@
 
 html,
 body {
-    height: 100%;
+    height: 100px;
+    background-color: #E4EDFA;
 }
 
 body {

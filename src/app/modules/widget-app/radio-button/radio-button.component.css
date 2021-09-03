@@ -26,11 +26,11 @@
 
 .example-button-row button,
 .example-button-row a {
-  margin: 5px;
+  margin: 2px;
 font-size: 12px;
-  /* padding: 1px; */
+  /* padding-right: 50px; */
   border-color: #3E6FB6;
-  width: 260px;
+  /* width: auto; */
   height: 30px;
   color: #3E6FB6;
   text-align: left;
