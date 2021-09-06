@@ -20,6 +20,7 @@ export class ProgressBarComponent extends WidgetComponentBase implements OnInit 
   SetValue(responseDataModel: any) {
     // throw new Error('Method not implemented.');
   }
+  progressValue = 75;
 
   @Input()  dataModel!: ProgressBarDataModel;
   @Input() configModel!: ProgressBarConfigModel;

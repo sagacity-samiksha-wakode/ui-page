@@ -1,17 +1,17 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
-import {BarChartConfigModel, BarChartDataModel} from '../widget-app/bar-chart/bar-chart-model';
+import { BarChartConfigModel, BarChartDataModel } from '../widget-app/bar-chart/bar-chart-model';
 import { PerformanceCard1ConfigModel, PerformanceCard1DataModel } from '../widget-app/performace-card1/performance-card1-model';
 import { PerformanceCard2ConfigModel, PerformanceCard2DataModel } from '../widget-app/performance-card2/performance-card2-model';
-import {ProgressA1ConfigModel, ProgressA1Model} from '../widget-app/progress-bar-a1/progress-a1-model';
+import { ProgressA1ConfigModel, ProgressA1Model } from '../widget-app/progress-bar-a1/progress-a1-model';
 import { ProgressBarConfigModel, ProgressBarDataModel } from '../widget-app/progress-bar/progress-bar-model';
-import {RadioButtonConfigModel, RadioButtonDataModel} from '../widget-app/radio-button/radio-button-model';
+import { RadioButtonConfigModel, RadioButtonDataModel } from '../widget-app/radio-button/radio-button-model';
 
 import { AppRepoHelperService } from 'src/app/services/common/app-repo-helper.service';
 import { EventActionService } from 'src/app/services/common/event-action.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { NotificationService } from 'src/app/services/common/notification.service';
-import {ProgressBarColor} from '../widget-app/progress-bar-a1/progress-a1-bar-color';
+import { ProgressBarColor } from '../widget-app/progress-bar-a1/progress-a1-bar-color';
 import { ServerApiInterfaceServiceService } from 'src/app/services/common/server-api-interface-service.service';
 import { SessionStorageService } from 'src/app/services/common/session-storage.service';
 import { WidgetPageBase } from '../widget-utility/widget-page-base';
@@ -143,7 +143,7 @@ implements OnInit, AfterViewInit, OnDestroy {
 
 
     this.progressBarDataModel= ProgressBarDataModel.getInstance();
-    this. progressBarConfigModel= ProgressBarConfigModel.getInstance();
+    this.progressBarConfigModel= ProgressBarConfigModel.getInstance();
 
     this.progressBarDataModel2= ProgressBarDataModel.getInstance();
     this. progressBarConfigModel2= ProgressBarConfigModel.getInstance();
@@ -260,19 +260,21 @@ implements OnInit, AfterViewInit, OnDestroy {
   {
     this.progressBarDataModel.data={
       text:"Permits With Avoidable Costs",
-      count:"80%",
+      count:"100%",
       countColor:"#000",
-      value:"100",
+      value:100,
       valuecolor:"#DC2C2B"
+
     }
+
   }
   bindProgressBarDataModel2()
   {
     this.progressBarDataModel2.data={
       text:"Start-Stop Compliance",
-      count:"30%",
+      count:"80%",
       countColor:"#000",
-      value:"100",
+      value:80,
       valuecolor:"#F0B018"
     }
   }
@@ -283,8 +285,8 @@ implements OnInit, AfterViewInit, OnDestroy {
       text:"Defects to Inspections",
       count:"50%",
       countColor:"#000",
-      value:"50",
-      background:"#DC2C2B"
+      value:50,
+      valuecolor:"#F0B018"
     }
   }
 
@@ -292,9 +294,9 @@ implements OnInit, AfterViewInit, OnDestroy {
   {
     this.progressBarDataModel4.data={
       text:"Right-First-Time_pemits",
-      count:"100%",
+      count:"40%",
       countColor:"#000",
-      value:"100",
+      value:40,
       valuecolor:"#DC2C2B"
     }
   }
@@ -305,10 +307,11 @@ implements OnInit, AfterViewInit, OnDestroy {
       text:"Reqistrations Completed on Time",
       count:"10%",
       countColor:"#000",
-      value:"100",
+      value:10,
       valuecolor:"#418B12"
     }
   }
+
 
 
   bindPerformanceCard1DataModel(){

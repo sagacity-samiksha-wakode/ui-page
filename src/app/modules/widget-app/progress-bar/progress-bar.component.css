@@ -10,7 +10,7 @@
 
 .card-count {
   font-weight: bold;
-  font-size: 11px;
+  font-size: 12px;
   /* line-height: 10px; */
   /* margin-top: 2px;
   color: #fff; */
@@ -18,7 +18,7 @@
 
 .performance-card-lable {
   /* font-weight: bold; */
-  font-size: 11px;
+  font-size: 12px;
 }
 
 ::ng-deep .mat-progress-bar-fill::after {
