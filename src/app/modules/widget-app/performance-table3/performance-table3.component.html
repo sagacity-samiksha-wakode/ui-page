@@ -1,0 +1,34 @@
+<table mat-table [dataSource]="dataSource" >
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+         <!-- Name Column -->
+  <ng-container matColumnDef="name" >
+    <th *matHeaderCellDef> </th>
+    <td mat-cell *matCellDef="let element" > <p class="td-border">{{element.name}}</p> </td>
+  </ng-container>
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="received">
+    <th class="th-color1" mat-header-cell *matHeaderCellDef> Received </th>
+    <td mat-cell *matCellDef="let element"> {{element.received}} </td>
+  </ng-container>
+
+
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="due">
+    <th class="th-color2" mat-header-cell *matHeaderCellDef> Due </th>
+    <td mat-cell *matCellDef="let element"> {{element.due}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="actioned">
+    <th class="th-color3" mat-header-cell *matHeaderCellDef> Actioned </th>
+    <td mat-cell *matCellDef="let element"> {{element.actioned}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

@@ -3,34 +3,32 @@ import { Component, OnInit } from '@angular/core';
 
 export interface PeriodicElement {
   name: string;
-  Due: number;
-  Actioned: number;
-  Outstanding: number;
+  received: number;
+  due: number;
+  actioned: number;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {name: 'Works start', Due: 11, Actioned: 3, Outstanding:8},
-  {name: 'Works Stop', Due: 13, Actioned:10, Outstanding:3},
-  {name: 'Permit Modification Requests', Due: 9,  Actioned: 8, Outstanding:1},
-  {name: 'Registrations', Due: 7,  Actioned: 22, Outstanding: 5},
-
+  {name: 'Defects', received: 1, due: 2, actioned:5}
 ];
 
 
 
+
+
 @Component({
-  selector: 'app-performance-table',
-  templateUrl: './performance-table.component.html',
-  styleUrls: ['./performance-table.component.css']
+  selector: 'app-performance-table3',
+  templateUrl: './performance-table3.component.html',
+  styleUrls: ['./performance-table3.component.css']
 })
-export class PerformanceTableComponent implements OnInit {
+export class PerformanceTable3Component implements OnInit {
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  displayedColumns: string[] = ['name' ,'Due', 'Actioned', 'Outstanding'];
+  displayedColumns: string[] = ['name' ,'received', 'due', 'actioned'];
   dataSource = ELEMENT_DATA;
 }
 

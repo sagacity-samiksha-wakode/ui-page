@@ -14,6 +14,8 @@ import { NgModule } from '@angular/core';
 import { PerformaceCard1Component } from './performace-card1/performace-card1.component';
 import { PerformanceCard2Component } from './performance-card2/performance-card2.component';
 import { PerformanceChartComponent } from './performance-chart/performance-chart.component';
+import { PerformanceTable2Component } from  './performance-table2/performance-table2.component';
+import { PerformanceTable3Component } from './performance-table3/performance-table3.component';
 import {PerformanceTableComponent} from './performance-table/performance-table.component';
 import { ProgressBarA1Component } from './progress-bar-a1/progress-bar-a1.component';
 import {ProgressBarColor} from './progress-bar-a1/progress-a1-bar-color';
@@ -34,7 +36,10 @@ import { RadioButtonComponent } from './radio-button/radio-button.component';
     BarChartComponent,
     RadioButtonComponent,
     PerformanceChartComponent,
-    PerformanceTableComponent
+    PerformanceTableComponent,
+    PerformanceTable2Component,
+    PerformanceTable3Component
+
 
 
   ],
@@ -61,7 +66,9 @@ import { RadioButtonComponent } from './radio-button/radio-button.component';
     BarChartComponent,
     RadioButtonComponent,
     PerformanceChartComponent,
-    PerformanceTableComponent
+    PerformanceTableComponent,
+    PerformanceTable2Component,
+    PerformanceTable3Component
 
   ]
 })

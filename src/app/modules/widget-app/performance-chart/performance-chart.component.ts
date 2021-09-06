@@ -9,7 +9,37 @@ export class PerformanceChartComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.addBarSpans();
   }
 
+
+  Data:any = [
+    ['Immediate', 22],
+   ['Minor', 28],
+  ['Standard', 38],
+  ['Major', 12]
+];
+
+
+     addBarSpans() {
+    const bars = document.getElementsByClassName('equalizer-bar');
+    const equalizer = document.getElementById("equalizer");
+
+    for (let i = 0; i < this.Data.length; i++) {
+        let html = '';
+        for (let j = 0; j < 10; j++) {
+          let number= Number((this.Data[i][1]/10).toFixed());
+          if(j < number){
+            html += '<span class="active"></span>';
+          }else{
+             html += '<span></span>';
+          }
+        }
+
+        equalizer.innerHTML += `<div class="equalizer-bar-wrapper"><div class="equalizer-bar">` + html + `</div><div class="info"><p>` + this.Data[i][0] + `</p><p>` + this.Data[i][1] + `%</p</div></div>`;
+
+    }
+
+  }
 }

@@ -9,3 +9,7 @@
 {
 border-radius: 15px;
 }
+
+.testdiv {
+  border-right: 1px solid #E0E0E0;
+}

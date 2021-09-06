@@ -1,0 +1,34 @@
+
+.equalizer {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  height: 10rem;
+  margin-top: 4rem;
+}
+.equalizer-bar {
+  width: 3.5rem;
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column-reverse;}
+
+  span {
+    display: block;
+    height: 4px;
+    border-radius: 4px;
+    width: 100%;
+    margin: 2px 0;
+   background: gray;
+    transition: .2s ease all;
+    opacity: 1;
+  }
+
+
+
+
+.info{
+  text-align:center;
+}
+span.active{
+  background:blue;
+}
