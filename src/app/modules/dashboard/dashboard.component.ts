@@ -263,7 +263,8 @@ implements OnInit, AfterViewInit, OnDestroy {
       count:"100%",
       countColor:"#000",
       value:100,
-      valuecolor:"#DC2C2B"
+      valuecolor:"#DC2C2B",
+
 
     }
 
@@ -286,7 +287,8 @@ implements OnInit, AfterViewInit, OnDestroy {
       count:"50%",
       countColor:"#000",
       value:50,
-      valuecolor:"#F0B018"
+      valuecolor:"#DC2C2B",
+
     }
   }
 
@@ -308,7 +310,9 @@ implements OnInit, AfterViewInit, OnDestroy {
       count:"10%",
       countColor:"#000",
       value:10,
-      valuecolor:"#418B12"
+      valuecolor:"#418B12",
+
+
     }
   }
 

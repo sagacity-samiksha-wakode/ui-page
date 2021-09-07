@@ -4,7 +4,7 @@ table {
 
 th {
   text-align: center;
-
+width: 100px;
   font-weight: 400;
 }
 
@@ -43,14 +43,17 @@ tr.mat-header-row {
  text-align: center;
  /* padding: 5px; */
 
+
 }
 
 .th-color2{
-  background-color:#F0B018;
+  background-color: #F0B018;
   color: #fff;
   font-size: 12px;
   text-align: center;
   /* padding: 5px; */
+  width: 170px;
+
 }
 .th-color3{
   background-color:#418B12;
@@ -58,6 +61,8 @@ tr.mat-header-row {
   font-size: 12px;
   text-align: center;
   /* padding: 5px; */
+
+
 }
 
 p {
@@ -66,15 +71,18 @@ p {
 }
 
 
- .td-border{margin-right:20px;
-  border: 1px #3C6BAF solid;
-  color:#3C6BAF;
-  border-radius: 10px;
-  text-align: center;
-  font-size: 12px;
-  text-indent: 1;
-  margin-top: 15px;
-  font-weight: 500;
+ .td-border {
+    margin-right: 17px;
+    border: 1px #3C6BAF solid;
+    color: #3C6BAF;
+    border-radius: 10px;
+    font-size: 12px;
+    text-indent: 1;
+    margin-top: 15px;
+    font-weight: 500;
+    width: 120px;
+    padding: 2px;
+
 }
 th.mat-header-cell{
   padding: 5px !important;
@@ -82,5 +90,7 @@ th.mat-header-cell{
   border-bottom-style: solid !important;
 }
 
-
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+  padding-left: 0px !important;
+}
 

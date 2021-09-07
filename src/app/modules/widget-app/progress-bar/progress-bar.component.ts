@@ -20,7 +20,12 @@ export class ProgressBarComponent extends WidgetComponentBase implements OnInit 
   SetValue(responseDataModel: any) {
     // throw new Error('Method not implemented.');
   }
-  progressValue = 75;
+  // color = "red";
+  // color2 = "pink";
+  // color3 = "yellow";
+  // mode = 'determinate';
+  // value = 50;
+  // bufferValue = 75;
 
   @Input()  dataModel!: ProgressBarDataModel;
   @Input() configModel!: ProgressBarConfigModel;
@@ -59,7 +64,8 @@ export class ProgressBarComponent extends WidgetComponentBase implements OnInit 
 
 
   convertData(response: any) {
-  }
+
+      }
 
   setMode(responseDataModel: any) {
   }

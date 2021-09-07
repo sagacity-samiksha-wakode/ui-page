@@ -4,7 +4,7 @@
         <div class="row justify-content-center align-self-center">
           <div class="row">
             <div class="col-10">
-              <span class="performance-card-lable" fxLayout="row" fxLayoutAlign="left left" >
+              <span class="performance-card-lable" fxLayout="row" fxLayoutAlign="left left"  >
                 {{dataModel.data.text}}
                    </span>
 
@@ -16,11 +16,10 @@
            </div>
           </div>
 
-                <mat-progress-bar mode="determinate" >
-                  <div class="card-count" fxFlex="50"  fxLayout="row" fxLayoutAlign="right right " [ngStyle]="{color:dataModel.data.valueColor}">
-                      {{dataModel.data.value}}
-                </div>
+                <mat-progress-bar mode="determinate" [value]="dataModel.data.value" [appProgressBarColor]="dataModel.data.valuecolor"  >
+
               </mat-progress-bar>
+
             </div>
           </div>
         </div>

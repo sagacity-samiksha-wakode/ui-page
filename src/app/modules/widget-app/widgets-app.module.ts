@@ -52,7 +52,9 @@ import { RadioButtonComponent } from './radio-button/radio-button.component';
     MatProgressSpinnerModule,
     MatRadioModule,
     CdkTableModule,
-    ChartsModule
+    ChartsModule,
+
+
 
 
   ],

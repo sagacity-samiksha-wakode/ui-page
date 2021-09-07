@@ -41,7 +41,7 @@ export class ProgressBarDataModel {
     count: string,
     countColor: string,
     value :number;
-    valuecolor:string;
+    valuecolor: string;
     backgroundColor: string,
     widgetStyle : any
   }

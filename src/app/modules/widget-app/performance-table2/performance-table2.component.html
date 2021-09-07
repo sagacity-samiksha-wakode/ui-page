@@ -5,13 +5,13 @@
 
          <!-- Name Column -->
   <ng-container matColumnDef="name" >
-    <th  *matHeaderCellDef> </th>
+    <th  *matHeaderCellDef style="width: 100px;"> </th>
     <td mat-cell *matCellDef="let element" > <p class="td-border">{{element.name}}</p> </td>
   </ng-container>
 
   <!-- Position Column -->
   <ng-container matColumnDef="received">
-    <th class="th-color1" mat-header-cell *matHeaderCellDef> Received </th>
+    <th class="th-color1" mat-header-cell  *matHeaderCellDef> Received </th>
     <td mat-cell *matCellDef="let element"> {{element.received}} </td>
   </ng-container>
 
