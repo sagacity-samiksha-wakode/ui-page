@@ -15,11 +15,15 @@ import { NotificationService } from './services/common/notification.service';
 import { ServerApiInterfaceServiceService } from './services/common/server-api-interface-service.service';
 import { ToastrModule } from 'ngx-toastr';
 import { WidgetAppModule } from './modules/widget-app/widgets-app.module';
+import { LayoutComponent } from './layout/layout.component';
+import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
+    LayoutComponent,
+    AdminLayoutComponent,
   ],
   imports: [
     BrowserModule,
