@@ -17,6 +17,6 @@ border-radius: 15px;
 .felx-row{
   display:flex;
   flex-direction:row;
-  justify-content:space-between;
+  justify-content: space-around;
   text-align: center;
 }
