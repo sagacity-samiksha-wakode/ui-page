@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import {MatTableModule} from '@angular/material/table';
 @Component({
   selector: 'app-admin-layout',
   templateUrl: './admin-layout.component.html',

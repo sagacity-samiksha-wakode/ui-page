@@ -7,6 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { DatePipe } from '@angular/common';
 import { HttpErrorInterceptorService } from './http-error-interceptor.service';
+import {LayoutAppModule}from './layout/layout-app.module'
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { MaterialModule } from './materials/material.module';
@@ -15,15 +16,15 @@ import { NotificationService } from './services/common/notification.service';
 import { ServerApiInterfaceServiceService } from './services/common/server-api-interface-service.service';
 import { ToastrModule } from 'ngx-toastr';
 import { WidgetAppModule } from './modules/widget-app/widgets-app.module';
-import { LayoutComponent } from './layout/layout.component';
-import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
+
+// import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
-    LayoutComponent,
-    AdminLayoutComponent,
+    DashboardComponent
+
+
   ],
   imports: [
     BrowserModule,
@@ -32,6 +33,7 @@ import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.compone
     MaterialModule,
     WidgetAppModule,
     HttpClientModule,
+    LayoutAppModule,
     ToastrModule.forRoot({
       timeOut: 3000,
       positionClass: 'toast-top-right',
