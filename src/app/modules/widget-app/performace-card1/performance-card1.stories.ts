@@ -1,19 +1,20 @@
-import { moduleMetadata, Story, Meta, componentWrapperDecorator, addDecorator } from '@storybook/angular';
-import { action } from '@storybook/addon-actions';
-import { ServerApiInterfaceServiceService } from 'src/app/services/common/server-api-interface-service.service';
-import { HttpClientModule } from '@angular/common/http';
+import { CommonModule, DatePipe } from '@angular/common';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Meta, Story, addDecorator, componentWrapperDecorator, moduleMetadata } from '@storybook/angular';
+
+import { HttpClientModule } from '@angular/common/http';
+import { MaterialModule } from 'src/app/materials/material.module';
 import { PerformaceCard1Component } from './performace-card1.component';
 import { PerformanceCard1DataModel } from './performance-card1-model';
-import { CommonModule, DatePipe } from '@angular/common';
-import { MaterialModule } from 'src/app/materials/material.module';
+import { ServerApiInterfaceServiceService } from 'src/app/services/common/server-api-interface-service.service';
 import { ValidationService } from 'src/app/services/common/validation.service';
+import { action } from '@storybook/addon-actions';
 
-import { initializeWorker, mswDecorator } from 'msw-storybook-addon';
-import { rest } from 'msw'
+// import { initializeWorker, mswDecorator } from 'msw-storybook-addon';
+// import { rest } from 'msw'
 
-initializeWorker();
-addDecorator(mswDecorator);
+// initializeWorker();
+// addDecorator(mswDecorator);
 
 
 
@@ -79,29 +80,29 @@ DebugMode.args = {
   configModel:  {}
 };
 
-export const SuccessBehavior = Template.bind({});
+// export const SuccessBehavior = Template.bind({});
 
-SuccessBehavior.args = {
-  isStoryBookMode:true,
-  dataModel:  {
-    ...PerformanceCard1DataModel.getInstance(), isSelfDataLoad:true
-  },
-  configModel:  {}
-};
+// SuccessBehavior.args = {
+//   isStoryBookMode:true,
+//   dataModel:  {
+//     ...PerformanceCard1DataModel.getInstance(), isSelfDataLoad:true
+//   },
+//   configModel:  {}
+// };
 
-SuccessBehavior.parameters = {
-  msw: [
-    rest.get('/user', (req, res, ctx) => {
-      return res(
-        ctx.json({
-          count:"10,000",
-          icon:"thumb_down",
-          countColor:"#E62E2D",
-          text:"Cost of Poor Planning"
-        })
-      )
-    }),
-  ],
-}
+// SuccessBehavior.parameters = {
+//   msw: [
+//     rest.get('/user', (req, res, ctx) => {
+//       return res(
+//         ctx.json({
+//           count:"10,000",
+//           icon:"thumb_down",
+//           countColor:"#E62E2D",
+//           text:"Cost of Poor Planning"
+//         })
+//       )
+//     }),
+//   ],
+// }
 
 

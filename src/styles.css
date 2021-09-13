@@ -13,3 +13,29 @@ body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.equalizer-bar {
+    width: 3.5rem;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.equalizer-bar span {
+    display: block;
+    height: 4px;
+    border-radius: 4px;
+    width: 100%;
+    margin: 2px 0;
+    background: gray;
+    transition: 0.2s ease all;
+    opacity: 1;
+}
+
+.info {
+    text-align: center;
+}
+
+span.active {
+    background: blue;
+}
