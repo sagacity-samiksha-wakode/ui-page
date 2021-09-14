@@ -4,22 +4,25 @@ import { Meta, Story, componentWrapperDecorator, moduleMetadata } from '@storybo
 
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from 'src/app/materials/material.module';
-import { PerformanceCard2Component } from './performance-card2.component';
-import { PerformanceCard2DataModel } from './performance-card2-model';
+import { ProgressBarComponent } from './progress-bar.component'
+import {ProgressBarConfigModel} from './progress-bar-model'
+import { ProgressBarDataModel } from './progress-bar-model'
 import { ServerApiInterfaceServiceService } from 'src/app/services/common/server-api-interface-service.service';
 import { ValidationService } from 'src/app/services/common/validation.service';
 import { action } from '@storybook/addon-actions';
 
 export default {
-    component: PerformanceCard2Component,
+    component: ProgressBarComponent,
     decorators: [
       moduleMetadata({
         // 👇 Imports both components to allow component composition with storybook
-        declarations: [PerformanceCard2Component],
+        declarations: [ProgressBarComponent],
         imports: [FormsModule, HttpClientModule,    CommonModule,
             MaterialModule,
             FormsModule,
-            ReactiveFormsModule ],
+            ReactiveFormsModule,
+            ProgressBarConfigModel,
+            ProgressBarDataModel ],
           providers: [FormBuilder,ServerApiInterfaceServiceService,
             DatePipe,ValidationService
           ],
@@ -28,7 +31,7 @@ export default {
      // componentWrapperDecorator(story => `<div style="margin: 3em">${story}</div>`),
     ],
     excludeStories: /.*Data$/,
-    title: 'PerformanceCard2Component',
+    title: 'ProgressBarComponent',
   } as Meta;
 
 
@@ -37,7 +40,7 @@ export const actionsData = {
 };
 
 
-const Template: Story<PerformanceCard2Component> = args => ({
+const Template: Story<ProgressBarComponent> = args => ({
     props: {
       ...args,
       //  onGetValues: actionsData.onGetValues,
@@ -46,19 +49,18 @@ const Template: Story<PerformanceCard2Component> = args => ({
     },
   });
 
-  export const Default = Template.bind({});
-  Default.args = {
-    isStoryBookMode:false,
-    dataModel:  PerformanceCard2DataModel.getInstance(),
-    configModel:  {}
-  };
-
+export const Default = Template.bind({});
+Default.args = {
+  isStoryBookMode:false,
+  dataModel:  ProgressBarDataModel.getInstance(),
+  configModel:  {}
+};
 
 export const SelfDataLoad = Template.bind({});
 SelfDataLoad.args = {
   isStoryBookMode:false,
   dataModel:  {
-    ...PerformanceCard2DataModel.getInstance(), isSelfDataLoad:true
+    ...ProgressBarDataModel.getInstance(), isSelfDataLoad:true
   },
   configModel:  {}
 };
@@ -67,7 +69,7 @@ export const DebugMode = Template.bind({});
 DebugMode.args = {
   isStoryBookMode:true,
   dataModel:  {
-    ...PerformanceCard2DataModel.getInstance(), isSelfDataLoad:true
+    ...ProgressBarDataModel.getInstance(), isSelfDataLoad:true
   },
   configModel:  {}
 };

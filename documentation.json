@@ -1008,12 +1008,12 @@
         },
         {
             "name": "PeriodicElement",
-            "id": "interface-PeriodicElement-a7fed400b48a6c1a93f58b99ef3f9bf3-1",
-            "file": "src/app/modules/widget-app/performance-table3/performance-table3.component.ts",
+            "id": "interface-PeriodicElement-40ae5971fe62910adeedbcb28679b174-1",
+            "file": "src/app/modules/widget-app/performance-table2/performance-table2.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import {BehaviorSubject, Observable} from 'rxjs';\r\nimport { Component, OnInit } from '@angular/core';\r\n\r\nexport interface PeriodicElement {\r\n  name: string;\r\n  received: number;\r\n  due: number;\r\n  actioned: number;\r\n}\r\n\r\nconst ELEMENT_DATA: PeriodicElement[] = [\r\n  {name: 'Defects', received: 1, due: 2, actioned:5}\r\n];\r\n\r\n\r\n\r\n\r\n\r\n@Component({\r\n  selector: 'app-performance-table3',\r\n  templateUrl: './performance-table3.component.html',\r\n  styleUrls: ['./performance-table3.component.css']\r\n})\r\nexport class PerformanceTable3Component implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n  displayedColumns: string[] = ['name' ,'received', 'due', 'actioned'];\r\n  dataSource = ELEMENT_DATA;\r\n}\r\n\r\n/**\r\n * Data source to provide what data should be rendered in the table. Note that the data source\r\n * can retrieve its data in any way. In this case, the data source is provided a reference\r\n * to a common data base, ExampleDatabase. It is not the data source's responsibility to manage\r\n * the underlying data. Instead, it only needs to take the data and send the table exactly what\r\n * should be rendered.\r\n */\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+            "sourceCode": "import {BehaviorSubject, Observable} from 'rxjs';\r\nimport { Component, OnInit } from '@angular/core';\r\n\r\nexport interface PeriodicElement {\r\n  name: string;\r\n  received: number;\r\n  due: number;\r\n  actioned: number;\r\n}\r\n\r\nconst ELEMENT_DATA: PeriodicElement[] = [\r\n  {name: 'Defects', received: 1, due: 2, actioned:5},\r\n  {name: 'Comments', received: 2,  due:5, actioned:6},\r\n  {name: 'FPNs', received: 3,  due: 6, actioned: 5},\r\n\r\n];\r\n\r\n\r\n\r\n@Component({\r\n  selector: 'app-performance-table2',\r\n  templateUrl: './performance-table2.component.html',\r\n  styleUrls: ['./performance-table2.component.css']\r\n})\r\nexport class PerformanceTable2Component implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n  displayedColumns: string[] = ['name' ,'received', 'due', 'actioned'];\r\n  dataSource = ELEMENT_DATA;\r\n}\r\n\r\n/**\r\n * Data source to provide what data should be rendered in the table. Note that the data source\r\n * can retrieve its data in any way. In this case, the data source is provided a reference\r\n * to a common data base, ExampleDatabase. It is not the data source's responsibility to manage\r\n * the underlying data. Instead, it only needs to take the data and send the table exactly what\r\n * should be rendered.\r\n */\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
             "properties": [
                 {
                     "name": "actioned",
@@ -1061,12 +1061,12 @@
         },
         {
             "name": "PeriodicElement",
-            "id": "interface-PeriodicElement-40ae5971fe62910adeedbcb28679b174-2",
-            "file": "src/app/modules/widget-app/performance-table2/performance-table2.component.ts",
+            "id": "interface-PeriodicElement-a7fed400b48a6c1a93f58b99ef3f9bf3-2",
+            "file": "src/app/modules/widget-app/performance-table3/performance-table3.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import {BehaviorSubject, Observable} from 'rxjs';\r\nimport { Component, OnInit } from '@angular/core';\r\n\r\nexport interface PeriodicElement {\r\n  name: string;\r\n  received: number;\r\n  due: number;\r\n  actioned: number;\r\n}\r\n\r\nconst ELEMENT_DATA: PeriodicElement[] = [\r\n  {name: 'Defects', received: 1, due: 2, actioned:5},\r\n  {name: 'Comments', received: 2,  due:5, actioned:6},\r\n  {name: 'FPNs', received: 3,  due: 6, actioned: 5},\r\n\r\n];\r\n\r\n\r\n\r\n@Component({\r\n  selector: 'app-performance-table2',\r\n  templateUrl: './performance-table2.component.html',\r\n  styleUrls: ['./performance-table2.component.css']\r\n})\r\nexport class PerformanceTable2Component implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n  displayedColumns: string[] = ['name' ,'received', 'due', 'actioned'];\r\n  dataSource = ELEMENT_DATA;\r\n}\r\n\r\n/**\r\n * Data source to provide what data should be rendered in the table. Note that the data source\r\n * can retrieve its data in any way. In this case, the data source is provided a reference\r\n * to a common data base, ExampleDatabase. It is not the data source's responsibility to manage\r\n * the underlying data. Instead, it only needs to take the data and send the table exactly what\r\n * should be rendered.\r\n */\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+            "sourceCode": "import {BehaviorSubject, Observable} from 'rxjs';\r\nimport { Component, OnInit } from '@angular/core';\r\n\r\nexport interface PeriodicElement {\r\n  name: string;\r\n  received: number;\r\n  due: number;\r\n  actioned: number;\r\n}\r\n\r\nconst ELEMENT_DATA: PeriodicElement[] = [\r\n  {name: 'Defects', received: 1, due: 2, actioned:5}\r\n];\r\n\r\n\r\n\r\n\r\n\r\n@Component({\r\n  selector: 'app-performance-table3',\r\n  templateUrl: './performance-table3.component.html',\r\n  styleUrls: ['./performance-table3.component.css']\r\n})\r\nexport class PerformanceTable3Component implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n  displayedColumns: string[] = ['name' ,'received', 'due', 'actioned'];\r\n  dataSource = ELEMENT_DATA;\r\n}\r\n\r\n/**\r\n * Data source to provide what data should be rendered in the table. Note that the data source\r\n * can retrieve its data in any way. In this case, the data source is provided a reference\r\n * to a common data base, ExampleDatabase. It is not the data source's responsibility to manage\r\n * the underlying data. Instead, it only needs to take the data and send the table exactly what\r\n * should be rendered.\r\n */\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
             "properties": [
                 {
                     "name": "actioned",
@@ -10491,12 +10491,12 @@
     "directives": [
         {
             "name": "ProgressBarColor",
-            "id": "directive-ProgressBarColor-2ed72b120bee7c369505960e06b70962",
-            "file": "src/app/modules/widget-app/progress-bar-a1/progress-a1-bar-color.ts",
+            "id": "directive-ProgressBarColor-e7fad937256b0f166e4d900cc3ddd50a",
+            "file": "src/app/modules/widget-app/progress-bar/progress-bar-color.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Directive, Input, OnChanges, SimpleChanges, ElementRef } from '@angular/core';\r\n\r\n@Directive({\r\n    selector: '[appProgressBarColor]'\r\n})\r\nexport class ProgressBarColor implements OnChanges {\r\n    static counter = 0;\r\n\r\n    @Input() appProgressBarColor;\r\n    styleEl: HTMLStyleElement = document.createElement('style');\r\n\r\n    //generate unique attribule which we will use to minimise the scope of our dynamic style \r\n    uniqueAttr = `app-progress-bar-color-${ProgressBarColor.counter++}`;\r\n\r\n    constructor(private el: ElementRef) {\r\n        const nativeEl: HTMLElement = this.el.nativeElement;\r\n        nativeEl.setAttribute(this.uniqueAttr, '');\r\n        nativeEl.appendChild(this.styleEl);\r\n    }\r\n\r\n    ngOnChanges(changes: SimpleChanges): void {\r\n        this.updateColor();\r\n    }\r\n\r\n    updateColor(): void {\r\n        // update dynamic style with the uniqueAttr\r\n        this.styleEl.innerText = `\r\n      [${this.uniqueAttr}] .mat-progress-bar-fill::after {\r\n        background-color: ${this.appProgressBarColor};\r\n      }\r\n    `;\r\n    }\r\n\r\n}",
+            "sourceCode": "import { Directive, ElementRef, Input, OnChanges, SimpleChanges } from '@angular/core';\r\n\r\n@Directive({\r\n  selector: '[appProgressBarColor]'\r\n})\r\nexport class ProgressBarColor implements OnChanges{\r\n  static counter = 0;\r\n\r\n  @Input() appProgressBarColor;\r\n  styleEl:HTMLStyleElement = document.createElement('style');\r\n\r\n  //generate unique attribule which we will use to minimise the scope of our dynamic style\r\n  uniqueAttr = `app-progress-bar-color-${ProgressBarColor.counter++}`;\r\n\r\n  constructor(private el: ElementRef) {\r\n    const nativeEl: HTMLElement = this.el.nativeElement;\r\n    nativeEl.setAttribute(this.uniqueAttr,'');\r\n    nativeEl.appendChild(this.styleEl);\r\n  }\r\n\r\n  ngOnChanges(changes: SimpleChanges): void{\r\n    this.updateColor();\r\n  }\r\n\r\n  updateColor(): void{\r\n    // update dynamic style with the uniqueAttr\r\n    this.styleEl.innerText = `\r\n      [${this.uniqueAttr}] .mat-progress-bar-fill::after {\r\n        background-color: ${this.appProgressBarColor};\r\n      }\r\n    `;\r\n  }\r\n\r\n}\r\n",
             "selector": "[appProgressBarColor]",
             "providers": [],
             "inputsClass": [
@@ -10620,12 +10620,12 @@
         },
         {
             "name": "ProgressBarColor",
-            "id": "directive-ProgressBarColor-e7fad937256b0f166e4d900cc3ddd50a-1",
-            "file": "src/app/modules/widget-app/progress-bar/progress-bar-color.ts",
+            "id": "directive-ProgressBarColor-2ed72b120bee7c369505960e06b70962-1",
+            "file": "src/app/modules/widget-app/progress-bar-a1/progress-a1-bar-color.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Directive, ElementRef, Input, OnChanges, SimpleChanges } from '@angular/core';\r\n\r\n@Directive({\r\n  selector: '[appProgressBarColor]'\r\n})\r\nexport class ProgressBarColor implements OnChanges{\r\n  static counter = 0;\r\n\r\n  @Input() appProgressBarColor;\r\n  styleEl:HTMLStyleElement = document.createElement('style');\r\n\r\n  //generate unique attribule which we will use to minimise the scope of our dynamic style\r\n  uniqueAttr = `app-progress-bar-color-${ProgressBarColor.counter++}`;\r\n\r\n  constructor(private el: ElementRef) {\r\n    const nativeEl: HTMLElement = this.el.nativeElement;\r\n    nativeEl.setAttribute(this.uniqueAttr,'');\r\n    nativeEl.appendChild(this.styleEl);\r\n  }\r\n\r\n  ngOnChanges(changes: SimpleChanges): void{\r\n    this.updateColor();\r\n  }\r\n\r\n  updateColor(): void{\r\n    // update dynamic style with the uniqueAttr\r\n    this.styleEl.innerText = `\r\n      [${this.uniqueAttr}] .mat-progress-bar-fill::after {\r\n        background-color: ${this.appProgressBarColor};\r\n      }\r\n    `;\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Directive, Input, OnChanges, SimpleChanges, ElementRef } from '@angular/core';\r\n\r\n@Directive({\r\n    selector: '[appProgressBarColor]'\r\n})\r\nexport class ProgressBarColor implements OnChanges {\r\n    static counter = 0;\r\n\r\n    @Input() appProgressBarColor;\r\n    styleEl: HTMLStyleElement = document.createElement('style');\r\n\r\n    //generate unique attribule which we will use to minimise the scope of our dynamic style \r\n    uniqueAttr = `app-progress-bar-color-${ProgressBarColor.counter++}`;\r\n\r\n    constructor(private el: ElementRef) {\r\n        const nativeEl: HTMLElement = this.el.nativeElement;\r\n        nativeEl.setAttribute(this.uniqueAttr, '');\r\n        nativeEl.appendChild(this.styleEl);\r\n    }\r\n\r\n    ngOnChanges(changes: SimpleChanges): void {\r\n        this.updateColor();\r\n    }\r\n\r\n    updateColor(): void {\r\n        // update dynamic style with the uniqueAttr\r\n        this.styleEl.innerText = `\r\n      [${this.uniqueAttr}] .mat-progress-bar-fill::after {\r\n        background-color: ${this.appProgressBarColor};\r\n      }\r\n    `;\r\n    }\r\n\r\n}",
             "selector": "[appProgressBarColor]",
             "providers": [],
             "inputsClass": [
@@ -11943,7 +11943,7 @@
     "components": [
         {
             "name": "AdminLayoutComponent",
-            "id": "component-AdminLayoutComponent-0e9bde126927934553d6d03f9b6e3b9d",
+            "id": "component-AdminLayoutComponent-59efc74dd553e0f1167560a3b4dd0013",
             "file": "src/app/layout/admin-layout/admin-layout.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -11981,11 +11981,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\nimport {MatTableModule} from '@angular/material/table';\r\n@Component({\r\n  selector: 'app-admin-layout',\r\n  templateUrl: './admin-layout.component.html',\r\n  styleUrls: ['./admin-layout.component.css']\r\n})\r\nexport class AdminLayoutComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\nimport {MatTableModule} from '@angular/material/table';\n@Component({\n  selector: 'app-admin-layout',\n  templateUrl: './admin-layout.component.html',\n  styleUrls: ['./admin-layout.component.css']\n})\nexport class AdminLayoutComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".example-spacer {\r\n  flex: 1 1 auto;\r\n\r\n}\r\n.mat-toolbar-row, .mat-toolbar-single-row {\r\n  display: flex;\r\n  box-sizing: border-box;\r\n  padding: 0 16px;\r\n  width: 100%;\r\n  flex-direction: row;\r\n  align-items: center;\r\n  white-space: nowrap;\r\n  background: #ffff !important;\r\n  border: 1px solid #F7F7F7\r\n}\r\n\r\n.mat-card {\r\n  transition: box-shadow 0 !important;\r\n  display: block;\r\n  position: relative;\r\n  padding: 4px !important;\r\n  border-radius: 4px;\r\n  border-color:red !important;\r\n}\r\n\r\n.mat-tab-label .mat-tab-label-content {\r\n  display: inline-flex !important;\r\n  justify-content: center !important;\r\n  align-items: center !important;\r\n  white-space: nowrap !important;\r\n  /* color: red; */\r\n  color: #3E6FB6 !important ;\r\n}\r\n",
+                    "data": ".example-spacer {\r\n  flex: 1 1 auto;\r\n\r\n}\r\n.mat-toolbar-row, .mat-toolbar-single-row {\r\n  display: flex;\r\n  box-sizing: border-box;\r\n  padding: 0 16px;\r\n  width: 100%;\r\n  flex-direction: row;\r\n  align-items: center;\r\n  white-space: nowrap;\r\n  background: #ffff !important;\r\n  border: 1px solid #F7F7F7\r\n}\r\n\r\n.mat-card {\r\n  transition: box-shadow 0 !important;\r\n  display: block;\r\n  position: relative;\r\n  padding: 4px !important;\r\n  border-radius: 4px;\r\n  border-color:red !important;\r\n}\r\n\r\n.mat-tab-label .mat-tab-label-content {\r\n  display: inline-flex !important;\r\n  justify-content: center !important;\r\n  align-items: center !important;\r\n  white-space: nowrap !important;\r\n  /* color: red; */\r\n  color: #3E6FB6 !important ;\r\n}\r\n\r\n.class-permitmaneger {\r\n  border: 0.1px solid;\r\n  border-radius: 20px;\r\n  color: #3E6FB6;\r\n  margin-left: 10px;\r\n  font-size: 12px;\r\n  /* padding: 3px; */\r\n  width: 100px;\r\n  height: 30px;\r\n  text-align: center;\r\n  font-weight: 500;\r\n}\r\n\r\n.icon-border{\r\n  border: 0.1px solid ;\r\n  border-radius: 50%;\r\n  color: #3E6FB6;\r\n  margin-left: 10px;\r\n}\r\n\r\n.material-icon-border\r\n{\r\n  border: 0px solid ;\r\n  border-radius: 50%;\r\n  color: #9C7BB9;\r\n  padding: 8px;\r\n   font-size: 10px;\r\n   background-color: #F3F8FF;\r\n}\r\n",
                     "styleUrl": "./admin-layout.component.css"
                 }
             ],
@@ -12001,7 +12001,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "\r\n<p  style=\"background-color: #ffff;\">\r\n\r\n  <mat-toolbar color=\"defoult\">\r\n   <!-- <button mat-icon-button class=\"example-icon\" aria-label=\"Example icon-button with menu icon\">\r\n    <mat-icon>menu</mat-icon>\r\n  </button> --><img src=\"assets/logo.png\" alt=\"Logo\" style=\"width: 100px;height: 20px;\">\r\n  <span class=\"material-icons\" style=\"border: 0.1px solid ;border-radius: 50%;color: #3E6FB6;margin-left: 10px;\">\r\n    home\r\n    </span>\r\n    <span style=\"border: 0.1px solid ;border-radius: 20px;color: #3E6FB6;margin-left: 10px;font-size: 12px;padding: 3px;\">Permit Manager</span>\r\n  <span class=\"example-spacer\"></span>\r\n <span style=\"color: #3E6FB6;margin-left: 10px;font-size: 12px;\">ABC Corporation</span>\r\n <span class=\"material-icons\" style=\"border: 0.1px solid ;border-radius: 50%;color: #3E6FB6;margin-left: 10px;\">\r\n  notifications\r\n  </span>\r\n  <mat-card style=\"margin-left: 10px;\">\r\n    <div class=\"row\">\r\n      <div class=\"col-3\">\r\n      <span class=\"material-icons\" style=\"border: 0px solid ;border-radius: 50%;color: #9C7BB9;padding: 8px; font-size: 10px;background-color: #F3F8FF;\">\r\n        VN\r\n            </span>\r\n\r\n          </div>\r\n          <div class=\"col-9\">\r\n<span style=\"font-size: 12px;\" >\r\n  S Patil\r\n</span>\r\n<span style=\"font-size: 10px;\"> ETC</span>\r\n</div></div>\r\n\r\n  </mat-card>\r\n\r\n</mat-toolbar>\r\n\r\n  <mat-tab-group animationDuration=\"0ms\">\r\n    <mat-tab label=\"Performance at a Glance\" ></mat-tab>\r\n    <!-- <mat-tab label=\"Second\">Content 2</mat-tab>\r\n    <mat-tab label=\"Third\">Content 3</mat-tab> -->\r\n  </mat-tab-group>\r\n\r\n\r\n</p>\r\n\r\n"
+            "templateData": "\n<p  style=\"background-color: #ffff;\">\n\n  <mat-toolbar color=\"defoult\">\n   <!-- <button mat-icon-button class=\"example-icon\" aria-label=\"Example icon-button with menu icon\">\n    <mat-icon>menu</mat-icon>\n  </button> --><img src=\"assets/logo.png\" alt=\"Logo\" style=\"width: 100px;height: 20px;\">\n  <span class=\"material-icons icon-border\" >\n    home\n    </span>\n    <span class=\"class-permitmaneger\">Permit Manager</span>\n  <span class=\"example-spacer\"></span>\n <span style=\"color: #3E6FB6;margin-left: 10px;font-size: 12px;\">ABC Corporation</span>\n <span class=\"material-icons icon-border\" >\n  notifications\n  </span>\n  <mat-card style=\"margin-left: 10px;\">\n    <div class=\"row\">\n      <div class=\"col-3\">\n      <span class=\"material-icons material-icon-border\" >\n        VN\n            </span>\n\n          </div>\n          <div class=\"col-9\">\n<span style=\"font-size: 12px;\" >\n  S Patil\n</span>\n<span style=\"font-size: 10px;\"> ETC</span>\n</div></div>\n\n  </mat-card>\n\n</mat-toolbar>\n\n  <mat-tab-group animationDuration=\"0ms\">\n    <mat-tab label=\"Performance at a Glance\" ></mat-tab>\n\n  </mat-tab-group>\n\n\n</p>\n\n"
         },
         {
             "name": "AppComponent",
@@ -14709,7 +14709,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".headingtitle {\r\n    font-size: 13px;\r\n    padding-bottom: 3px;\r\n    color: #3C6BAF;\r\n    font-weight: 800;\r\n}\r\n\r\n.mat-card\r\n{\r\nborder-radius: 15px;\r\n}\r\n\r\n.testdiv {\r\n  border-right: 1px solid #E0E0E0;\r\n}\r\n\r\n.felx-row{\r\n  display:flex;\r\n  flex-direction:row;\r\n  justify-content:space-between;\r\n  text-align: center;\r\n}\r\n",
+                    "data": ".headingtitle {\r\n    font-size: 13px;\r\n    padding-bottom: 3px;\r\n    color: #3C6BAF;\r\n    font-weight: 800;\r\n}\r\n\r\n.mat-card\r\n{\r\nborder-radius: 15px;\r\n}\r\n\r\n.testdiv {\r\n  border-right: 1px solid #E0E0E0;\r\n}\r\n\r\n.felx-row{\r\n  display:flex;\r\n  flex-direction:row;\r\n  justify-content: space-around;\r\n  text-align: center;\r\n}\r\n",
                     "styleUrl": "./dashboard.component.css"
                 }
             ],
@@ -19562,9 +19562,6 @@
                             "name": "ProgressBarA1Component"
                         },
                         {
-                            "name": "ProgressBarColor"
-                        },
-                        {
                             "name": "ProgressBarComponent"
                         },
                         {
@@ -19727,21 +19724,21 @@
                 "name": "ELEMENT_DATA",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/modules/widget-app/performance-table3/performance-table3.component.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "PeriodicElement[]",
-                "defaultValue": "[\r\n  {name: 'Defects', received: 1, due: 2, actioned:5}\r\n]"
-            },
-            {
-                "name": "ELEMENT_DATA",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/modules/widget-app/performance-table2/performance-table2.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "PeriodicElement[]",
                 "defaultValue": "[\r\n  {name: 'Defects', received: 1, due: 2, actioned:5},\r\n  {name: 'Comments', received: 2,  due:5, actioned:6},\r\n  {name: 'FPNs', received: 3,  due: 6, actioned: 5},\r\n\r\n]"
+            },
+            {
+                "name": "ELEMENT_DATA",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/modules/widget-app/performance-table3/performance-table3.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "PeriodicElement[]",
+                "defaultValue": "[\r\n  {name: 'Defects', received: 1, due: 2, actioned:5}\r\n]"
             },
             {
                 "name": "environment",
@@ -19987,6 +19984,52 @@
                     {
                         "name": "DATE_FORMAT",
                         "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "DATE_TIME_FORMAT",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "USE_GLOBAL_DATE_TIME_FORMAT",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "RESEND_OTP_TIME_SEC",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "USE_SAML",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "MAX_USER_ADD_COUNT",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "ARAI_PAYMENT_URL",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "src/app/constants/app-repo.constants.ts"
+            },
+            {
+                "name": "APP_SETTING",
+                "childs": [
+                    {
+                        "name": "DATE_FORMAT",
+                        "deprecated": false,
                         "deprecationMessage": "",
                         "value": "DATE_FORMAT"
                     },
@@ -20035,40 +20078,25 @@
                 "file": "src/app/constants/db.constants.ts"
             },
             {
-                "name": "APP_SETTING",
+                "name": "CASE_IMPACT_TYPE_ID",
                 "childs": [
                     {
-                        "name": "DATE_FORMAT",
+                        "name": "NO_IMPACT",
                         "deprecated": false,
                         "deprecationMessage": ""
                     },
                     {
-                        "name": "DATE_TIME_FORMAT",
+                        "name": "TEST_DELAY",
                         "deprecated": false,
                         "deprecationMessage": ""
                     },
                     {
-                        "name": "USE_GLOBAL_DATE_TIME_FORMAT",
+                        "name": "TEST_ON_HOLD",
                         "deprecated": false,
                         "deprecationMessage": ""
                     },
                     {
-                        "name": "RESEND_OTP_TIME_SEC",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "USE_SAML",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "MAX_USER_ADD_COUNT",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "ARAI_PAYMENT_URL",
+                        "name": "CLEARANCE_ON_HOLD",
                         "deprecated": false,
                         "deprecationMessage": ""
                     }
@@ -20116,25 +20144,105 @@
                 "file": "src/app/constants/db.constants.ts"
             },
             {
-                "name": "CASE_IMPACT_TYPE_ID",
+                "name": "CASE_STATUS",
                 "childs": [
                     {
-                        "name": "NO_IMPACT",
+                        "name": "DRAFT_CS",
                         "deprecated": false,
                         "deprecationMessage": ""
                     },
                     {
-                        "name": "TEST_DELAY",
+                        "name": "IN_PROGRSS",
                         "deprecated": false,
                         "deprecationMessage": ""
                     },
                     {
-                        "name": "TEST_ON_HOLD",
+                        "name": "REJECTED",
                         "deprecated": false,
                         "deprecationMessage": ""
                     },
                     {
-                        "name": "CLEARANCE_ON_HOLD",
+                        "name": "CASE_APPROVED",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "SUBMITTED",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "REVIEW",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "ASSIGNED",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "CERTIFIED",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "COMPLETED",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "ALLOCATED",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "ALLOTED_TO_ENGINEER",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "FORWARDED_FOR_CERTIFICATE",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "CUSTOMER_CANCEL",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "UNDER_SHORT_CLOSE",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "SHORT_CLOSED",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "PARTIAL_CLOSE",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "SHOR_CLOSE_VERIFICATION",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "ON_GOING",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "FINAL_SCRUTINY",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "UNDER_CERTIFICATION",
                         "deprecated": false,
                         "deprecationMessage": ""
                     }
@@ -20278,117 +20386,6 @@
                 "file": "src/app/constants/db.constants.ts"
             },
             {
-                "name": "CASE_STATUS",
-                "childs": [
-                    {
-                        "name": "DRAFT_CS",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "IN_PROGRSS",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "REJECTED",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "CASE_APPROVED",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "SUBMITTED",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "REVIEW",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "ASSIGNED",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "CERTIFIED",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "COMPLETED",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "ALLOCATED",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "ALLOTED_TO_ENGINEER",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "FORWARDED_FOR_CERTIFICATE",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "CUSTOMER_CANCEL",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "UNDER_SHORT_CLOSE",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "SHORT_CLOSED",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "PARTIAL_CLOSE",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "SHOR_CLOSE_VERIFICATION",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "ON_GOING",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "FINAL_SCRUTINY",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "UNDER_CERTIFICATION",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "ctype": "miscellaneous",
-                "subtype": "enum",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "file": "src/app/constants/app-repo.constants.ts"
-            },
-            {
                 "name": "CLICK_EVENT",
                 "childs": [
                     {
@@ -20457,6 +20454,32 @@
                     {
                         "name": "SCR_START",
                         "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "SCR_STOP",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "SCR_COMPLETED",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "src/app/constants/app-repo.constants.ts"
+            },
+            {
+                "name": "ENGINEER_WORKING_STATUS",
+                "childs": [
+                    {
+                        "name": "SCR_START",
+                        "deprecated": false,
                         "deprecationMessage": "",
                         "value": "SCR_START"
                     },
@@ -20479,32 +20502,6 @@
                 "deprecationMessage": "",
                 "description": "",
                 "file": "src/app/constants/db.constants.ts"
-            },
-            {
-                "name": "ENGINEER_WORKING_STATUS",
-                "childs": [
-                    {
-                        "name": "SCR_START",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "SCR_STOP",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "SCR_COMPLETED",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "ctype": "miscellaneous",
-                "subtype": "enum",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "file": "src/app/constants/app-repo.constants.ts"
             },
             {
                 "name": "EVENT_NAME",
@@ -20901,6 +20898,192 @@
                     {
                         "name": "FUEL_TYPE",
                         "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "VEHICLE_CATEGORY",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "EMISSION_NORMS",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "NATURE_OF_BUSINESS",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "ORGANIZATION_TYPE",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "STATE",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "ACCOUNT_TYPE",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "DOCUMENT_SUBMISSION_TYPE",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "REPORT_CERTIFICATES",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "OTHER_CERTIFICATES",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "CMVR_CERTIFICATES",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "TYPE_OF_CERTIFICATE",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "CASE_DOCUMENT",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "USER_ROLES",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "COMPANY_USER_ROLES",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "COMPONENT_TYPES",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "CASE_STATUS",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "CUSTOMER_STATUS",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "DOCUMENT_TYPE",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "CASE_DEPARTMENT_STATUS",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "CASE_TYPE",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "CASE_PRIORITY",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "CASE_REM_ACCESS_SPECIFIER",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "CASE_REMARK_ACTIONS",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "ARAI_DEPARTMENTS",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "PARTY_STATUS",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "CASE_DOCUMENT_TYPE",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "TAGGING_TYPE",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "CLEARANCE_NOTE_STATUS",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "CLEARANCE_MODE",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "CL_NOTE_TEST_RPT_UPLOADED",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "CL_NOTE_FINACE_CLEARED",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "DISPATCH_TRANSPORT_TYPE",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "CASE_IMPACT_TYPE",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "CASE_QUERY_TYPE",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "src/app/constants/app-repo.constants.ts"
+            },
+            {
+                "name": "MASTER_DATA",
+                "childs": [
+                    {
+                        "name": "FUEL_TYPE",
+                        "deprecated": false,
                         "deprecationMessage": "",
                         "value": "FUEL_TYPE"
                     },
@@ -21129,192 +21312,6 @@
                 "file": "src/app/constants/db.constants.ts"
             },
             {
-                "name": "MASTER_DATA",
-                "childs": [
-                    {
-                        "name": "FUEL_TYPE",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "VEHICLE_CATEGORY",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "EMISSION_NORMS",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "NATURE_OF_BUSINESS",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "ORGANIZATION_TYPE",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "STATE",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "ACCOUNT_TYPE",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "DOCUMENT_SUBMISSION_TYPE",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "REPORT_CERTIFICATES",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "OTHER_CERTIFICATES",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "CMVR_CERTIFICATES",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "TYPE_OF_CERTIFICATE",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "CASE_DOCUMENT",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "USER_ROLES",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "COMPANY_USER_ROLES",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "COMPONENT_TYPES",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "CASE_STATUS",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "CUSTOMER_STATUS",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "DOCUMENT_TYPE",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "CASE_DEPARTMENT_STATUS",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "CASE_TYPE",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "CASE_PRIORITY",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "CASE_REM_ACCESS_SPECIFIER",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "CASE_REMARK_ACTIONS",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "ARAI_DEPARTMENTS",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "PARTY_STATUS",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "CASE_DOCUMENT_TYPE",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "TAGGING_TYPE",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "CLEARANCE_NOTE_STATUS",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "CLEARANCE_MODE",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "CL_NOTE_TEST_RPT_UPLOADED",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "CL_NOTE_FINACE_CLEARED",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "DISPATCH_TRANSPORT_TYPE",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "CASE_IMPACT_TYPE",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "CASE_QUERY_TYPE",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "ctype": "miscellaneous",
-                "subtype": "enum",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "file": "src/app/constants/app-repo.constants.ts"
-            },
-            {
                 "name": "NAVIGATION_DATA",
                 "childs": [
                     {
@@ -21407,6 +21404,27 @@
                     {
                         "name": "CQT_GENERIC",
                         "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "CQT_DOCUMENTS",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "src/app/constants/app-repo.constants.ts"
+            },
+            {
+                "name": "QUERY_TYPES_ID",
+                "childs": [
+                    {
+                        "name": "CQT_GENERIC",
+                        "deprecated": false,
                         "deprecationMessage": "",
                         "value": "11461"
                     },
@@ -21423,27 +21441,6 @@
                 "deprecationMessage": "",
                 "description": "",
                 "file": "src/app/constants/db.constants.ts"
-            },
-            {
-                "name": "QUERY_TYPES_ID",
-                "childs": [
-                    {
-                        "name": "CQT_GENERIC",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "CQT_DOCUMENTS",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "ctype": "miscellaneous",
-                "subtype": "enum",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "file": "src/app/constants/app-repo.constants.ts"
             },
             {
                 "name": "SESSION_STORAGE_DATA_KEY",
@@ -21486,6 +21483,22 @@
                     {
                         "name": "OTHER_TAG",
                         "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "src/app/constants/app-repo.constants.ts"
+            },
+            {
+                "name": "TAGS_TYPES_CODE",
+                "childs": [
+                    {
+                        "name": "OTHER_TAG",
+                        "deprecated": false,
                         "deprecationMessage": "",
                         "value": "OTHER_TAG"
                     }
@@ -21498,7 +21511,7 @@
                 "file": "src/app/constants/db.constants.ts"
             },
             {
-                "name": "TAGS_TYPES_CODE",
+                "name": "TAGS_TYPES_ID",
                 "childs": [
                     {
                         "name": "OTHER_TAG",
@@ -21529,22 +21542,6 @@
                 "deprecationMessage": "",
                 "description": "",
                 "file": "src/app/constants/db.constants.ts"
-            },
-            {
-                "name": "TAGS_TYPES_ID",
-                "childs": [
-                    {
-                        "name": "OTHER_TAG",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "ctype": "miscellaneous",
-                "subtype": "enum",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "file": "src/app/constants/app-repo.constants.ts"
             },
             {
                 "name": "USER_ROLE_TYPE",
@@ -21802,18 +21799,6 @@
                     "defaultValue": "[\r\n  {name: 'Works start', Due: 11, Actioned: 3, Outstanding:8},\r\n  {name: 'Works Stop', Due: 13, Actioned:10, Outstanding:3},\r\n  {name: 'Permit Modification Requests', Due: 9,  Actioned: 8, Outstanding:1},\r\n  {name: 'Registrations', Due: 7,  Actioned: 22, Outstanding: 5},\r\n\r\n]"
                 }
             ],
-            "src/app/modules/widget-app/performance-table3/performance-table3.component.ts": [
-                {
-                    "name": "ELEMENT_DATA",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/modules/widget-app/performance-table3/performance-table3.component.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "PeriodicElement[]",
-                    "defaultValue": "[\r\n  {name: 'Defects', received: 1, due: 2, actioned:5}\r\n]"
-                }
-            ],
             "src/app/modules/widget-app/performance-table2/performance-table2.component.ts": [
                 {
                     "name": "ELEMENT_DATA",
@@ -21824,6 +21809,18 @@
                     "deprecationMessage": "",
                     "type": "PeriodicElement[]",
                     "defaultValue": "[\r\n  {name: 'Defects', received: 1, due: 2, actioned:5},\r\n  {name: 'Comments', received: 2,  due:5, actioned:6},\r\n  {name: 'FPNs', received: 3,  due: 6, actioned: 5},\r\n\r\n]"
+                }
+            ],
+            "src/app/modules/widget-app/performance-table3/performance-table3.component.ts": [
+                {
+                    "name": "ELEMENT_DATA",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/modules/widget-app/performance-table3/performance-table3.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "PeriodicElement[]",
+                    "defaultValue": "[\r\n  {name: 'Defects', received: 1, due: 2, actioned:5}\r\n]"
                 }
             ],
             "src/environments/environment.prod.ts": [

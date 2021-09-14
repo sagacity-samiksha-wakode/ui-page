@@ -4,8 +4,7 @@ import { Meta, Story, addDecorator, componentWrapperDecorator, moduleMetadata } 
 
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from 'src/app/materials/material.module';
-import { PerformaceCard1Component } from './performace-card1.component';
-import { PerformanceCard1DataModel } from './performance-card1-model';
+import {PerformanceChartComponent} from './performance-chart.component';
 import { ServerApiInterfaceServiceService } from 'src/app/services/common/server-api-interface-service.service';
 import { ValidationService } from 'src/app/services/common/validation.service';
 import { action } from '@storybook/addon-actions';
@@ -29,11 +28,11 @@ import { action } from '@storybook/addon-actions';
 
 
 export default {
-    component: PerformaceCard1Component,
+    component: PerformanceChartComponent,
     decorators: [
       moduleMetadata({
         // 👇 Imports both components to allow component composition with storybook
-        declarations: [PerformaceCard1Component],
+        declarations: [PerformanceChartComponent],
         imports: [FormsModule, HttpClientModule,    CommonModule,
           MaterialModule,
           FormsModule,
@@ -46,7 +45,7 @@ export default {
      // componentWrapperDecorator(story => `<div style="margin: 3em">${story}</div>`),
     ],
     excludeStories: /.*Data$/,
-    title: 'PerformaceCard1Component',
+    title: 'PerformanceChartComponent',
   } as Meta;
 
 
@@ -55,7 +54,7 @@ export const actionsData = {
 };
 
 
-const Template: Story<PerformaceCard1Component> = args => ({
+const Template: Story<PerformanceChartComponent> = args => ({
     props: {
       ...args,
       //  onGetValues: actionsData.onGetValues,
@@ -67,51 +66,9 @@ const Template: Story<PerformaceCard1Component> = args => ({
 export const Default = Template.bind({});
 Default.args = {
   isStoryBookMode:false,
-  dataModel:  PerformanceCard1DataModel.getInstance(),
+
   configModel:  {}
 };
 
-export const SelfDataLoad = Template.bind({});
-SelfDataLoad.args = {
-  isStoryBookMode:false,
-  dataModel:  {
-    ...PerformanceCard1DataModel.getInstance(), isSelfDataLoad:true
-  },
-  configModel:  {}
-};
-
-export const DebugMode = Template.bind({});
-DebugMode.args = {
-  isStoryBookMode:true,
-  dataModel:  {
-    ...PerformanceCard1DataModel.getInstance(), isSelfDataLoad:true
-  },
-  configModel:  {}
-};
-
-export const SuccessBehavior = Template.bind({});
-
-SuccessBehavior.args = {
-  isStoryBookMode:true,
-  dataModel:  {
-    ...PerformanceCard1DataModel.getInstance(), isSelfDataLoad:true
-  },
-  configModel:  {}
-};
-
-// SuccessBehavior.parameters = {
-//   msw: [
-//     req.get('/user', (req, res, ctx) => {
-//       return res(
-//         ctx.json({
-//           count:"10,000",
-//           icon:"thumb_down",
-//           countColor:"#E62E2D",
-//           text:"Cost of Poor Planning"
-//         })
-//       )
-//     }),
-//   ],
-// }
 
 
