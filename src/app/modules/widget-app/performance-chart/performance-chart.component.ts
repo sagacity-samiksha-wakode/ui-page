@@ -8,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class PerformanceChartComponent implements OnInit {
 
   title:string;
+  backgroundColor :any;
+  color:any;
+  height:any;
+width:any;
+border:any
 
 
   constructor() { }

@@ -10,17 +10,6 @@ import { ServerApiInterfaceServiceService } from 'src/app/services/common/server
 import { ValidationService } from 'src/app/services/common/validation.service';
 import { action } from '@storybook/addon-actions';
 
-// import { initializeWorker, mswDecorator } from 'msw-storybook-addon';
-
-// import { rest } from 'msw'
-
-
-// initializeWorker();
-// addDecorator(mswDecorator);
-
-
-
-
 export default {
     component: PerformanceChartComponent,
     decorators: [
@@ -69,13 +58,20 @@ export const Default = Template.bind({});
 Default.args = {
   isStoryBookMode:false,
   title:"Battery Indicator",
+  backgroundColor:"#FBFCFC",
+  color:"#283747",
+  height:"200px",
+  width:'400px',
+
   configModel:  {}
 };
 
-export const Value = Template.bind({});
-Value.args = {
+export const Border = Template.bind({});
+Border.args = {
   isStoryBookMode:false,
-  title:"Chart with value",
+  title:"Chart with Border",
+  height:"200px",
+  border:'2px solid #85929E',
   configModel:  {}
 };
 

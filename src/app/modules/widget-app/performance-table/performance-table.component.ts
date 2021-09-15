@@ -1,5 +1,5 @@
 import {BehaviorSubject, Observable} from 'rxjs';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 export interface PeriodicElement {
   name: string;
@@ -25,6 +25,17 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class PerformanceTableComponent implements OnInit {
 
+  title:string;
+  backgroundColor :any;
+  backgroundColor1:any
+  backgroundColor2:any
+  color:any;
+  height:any;
+  width:any;
+  border:any
+
+
+
   constructor() { }
 
   ngOnInit(): void {
@@ -32,7 +43,29 @@ export class PerformanceTableComponent implements OnInit {
 
   displayedColumns: string[] = ['name' ,'Due', 'Actioned', 'Outstanding'];
   dataSource = ELEMENT_DATA;
-}
+
+
+  @Input()
+  size: 'small' | 'medium' | 'large' = 'medium';
+
+  @Input()
+  primary = false;
+
+
+
+@Output()
+  onClick = new EventEmitter<Event>();
+
+  public get classes(): string[] {
+    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+
+    return ['storybook-button', `storybook-button--${this.size}`, mode];
+  }
+  public get classes1(): string[] {
+    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+
+    return ['storybook-button', `storybook-button--${this.size}`, mode];
+  }
 
 /**
  * Data source to provide what data should be rendered in the table. Note that the data source
@@ -44,7 +77,7 @@ export class PerformanceTableComponent implements OnInit {
 
 
 
-
+}
 
 
 

@@ -5,6 +5,7 @@ import { Meta, Story, addDecorator, componentWrapperDecorator, moduleMetadata } 
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from 'src/app/materials/material.module';
 import { PerformanceTableComponent } from './performance-table.component';
+import { PrintHook } from '@angular/flex-layout';
 import { ServerApiInterfaceServiceService } from 'src/app/services/common/server-api-interface-service.service';
 import { ValidationService } from 'src/app/services/common/validation.service';
 import { action } from '@storybook/addon-actions';
@@ -66,7 +67,15 @@ const Template: Story<PerformanceTableComponent> = args => ({
 export const Default = Template.bind({});
 Default.args = {
   isStoryBookMode:false,
-
+  size: 'large',
+  title:"Performance Table",
+  backgroundColor:"#F0B018",
+  color:"#ffff",
+  backgroundColor1:"#418B12",
+  backgroundColor2:"#DC2C2B",
+  height:"200px",
+  width:'500px',
+ name:' ',
   configModel:  {}
 };
 

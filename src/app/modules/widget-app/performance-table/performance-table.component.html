@@ -1,4 +1,5 @@
-<table mat-table [dataSource]="dataSource" >
+<p style="font-weight: 600;">{{title}}</p>
+<table mat-table [dataSource]="dataSource"   [ngStyle]="{'height': height , 'width':width}" >
 
   <!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
@@ -11,21 +12,21 @@
 
   <!-- Position Column -->
   <ng-container matColumnDef="Due">
-    <th mat-header-cell class="th-color1"  *matHeaderCellDef> Due </th>
-    <td mat-cell *matCellDef="let element"> {{element.Due}} </td>
+    <th  [ngClass]="classes" [ngStyle]="{'backgroundColor':backgroundColor,'color':color}" mat-header-cell class="th-color1"  *matHeaderCellDef> Due </th>
+    <td mat-cell *matCellDef="let element" > {{element.Due}} </td>
   </ng-container>
 
 
 
   <!-- Weight Column -->
   <ng-container matColumnDef="Actioned">
-    <th class="th-color2" mat-header-cell *matHeaderCellDef> Actioned </th>
+    <th class="th-color2"  [ngStyle]="{'backgroundColor':backgroundColor1,'color':color}" mat-header-cell *matHeaderCellDef> Actioned </th>
     <td mat-cell *matCellDef="let element"> {{element.Actioned}} </td>
   </ng-container>
 
   <!-- Symbol Column -->
   <ng-container matColumnDef="Outstanding">
-    <th class="th-color3" mat-header-cell *matHeaderCellDef> Outstanding </th>
+    <th class="th-color3"  [ngStyle]="{'backgroundColor':backgroundColor2,'color':color}" mat-header-cell *matHeaderCellDef> Outstanding </th>
     <td mat-cell *matCellDef="let element"> {{element.Outstanding}} </td>
   </ng-container>
 
