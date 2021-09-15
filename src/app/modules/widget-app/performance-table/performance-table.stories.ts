@@ -45,7 +45,7 @@ export default {
      // componentWrapperDecorator(story => `<div style="margin: 3em">${story}</div>`),
     ],
     excludeStories: /.*Data$/,
-    title: 'PerformanceChartComponent',
+    title: 'PerformanceTableComponent',
   } as Meta;
 
 

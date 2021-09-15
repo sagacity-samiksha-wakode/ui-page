@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerformanceChartComponent implements OnInit {
 
+  title:string;
+
+
   constructor() { }
 
   ngOnInit(){
@@ -15,10 +18,10 @@ export class PerformanceChartComponent implements OnInit {
 
 
   Data:any = [
-    ['Immediate', 22],
+    ['Immediate', 70],
    ['Minor', 28],
-  ['Standard', 38],
-  ['Major', 12]
+  ['Standard', 90],
+  ['Major', 55]
 ];
 
 

@@ -3,6 +3,7 @@ import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Meta, Story, addDecorator, componentWrapperDecorator, moduleMetadata } from '@storybook/angular';
 
 import { HttpClientModule } from '@angular/common/http';
+import { Label } from 'ng2-charts';
 import { MaterialModule } from 'src/app/materials/material.module';
 import {PerformanceChartComponent} from './performance-chart.component';
 import { ServerApiInterfaceServiceService } from 'src/app/services/common/server-api-interface-service.service';
@@ -11,15 +12,8 @@ import { action } from '@storybook/addon-actions';
 
 // import { initializeWorker, mswDecorator } from 'msw-storybook-addon';
 
-
-
-
-
-
-
-
-
 // import { rest } from 'msw'
+
 
 // initializeWorker();
 // addDecorator(mswDecorator);
@@ -46,29 +40,49 @@ export default {
     ],
     excludeStories: /.*Data$/,
     title: 'PerformanceChartComponent',
+
+    argTypes: {
+
+
+     },
   } as Meta;
+
+
+
 
 
 export const actionsData = {
     onGetValues: action('getValues'),
+    controls: { expanded: true },
 };
 
 
 const Template: Story<PerformanceChartComponent> = args => ({
     props: {
       ...args,
-      //  onGetValues: actionsData.onGetValues,
-    //   onArchiveTask: TaskStories.actionsData.onArchiveTask,
-
-    },
+       },
   });
+
+
 
 export const Default = Template.bind({});
 Default.args = {
   isStoryBookMode:false,
-
+  title:"Battery Indicator",
   configModel:  {}
 };
 
+export const Value = Template.bind({});
+Value.args = {
+  isStoryBookMode:false,
+  title:"Chart with value",
+  configModel:  {}
+};
 
+export const Title = Template.bind({});
+Title.args = {
+  isStoryBookMode:false,
+  title:" ",
+  configModel:  {}
+};
 
