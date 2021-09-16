@@ -40,7 +40,7 @@ export class PerformanceTableComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  @Input()
+
   displayedColumns: string[] = ['name' ,'Due', 'Actioned', 'Outstanding'];
   dataSource = ELEMENT_DATA;
 

@@ -75,9 +75,9 @@ Default.args = {
   backgroundColor2:"#DC2C2B",
   height:"200px",
   width:'500px',
- name:' ',
+//  name:' ',
   configModel:  {},
-  displayedColumns:  ['sam' ,'type', 'Actioned', 'Outstanding']
+
 };
 
 
