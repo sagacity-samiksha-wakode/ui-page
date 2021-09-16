@@ -42,6 +42,7 @@ export default class ButtonComponent {
   /**
    * Optional click handler
    */
+  
   @Output()
   onClick = new EventEmitter<Event>();
 

@@ -11,8 +11,8 @@ export class PerformanceChartComponent implements OnInit {
   backgroundColor :any;
   color:any;
   height:any;
-width:any;
-border:any
+  width:any;
+  border:any
 
 
   constructor() { }

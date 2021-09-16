@@ -25,7 +25,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class PerformanceTable2Component implements OnInit {
 
 
-  title:string;
+  
 
 
   constructor() { }

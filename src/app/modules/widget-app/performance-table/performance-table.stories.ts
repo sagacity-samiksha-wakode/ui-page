@@ -76,7 +76,8 @@ Default.args = {
   height:"200px",
   width:'500px',
  name:' ',
-  configModel:  {}
+  configModel:  {},
+  displayedColumns:  ['sam' ,'type', 'Actioned', 'Outstanding']
 };
 
 
