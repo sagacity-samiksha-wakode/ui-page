@@ -958,12 +958,12 @@
         },
         {
             "name": "PeriodicElement",
-            "id": "interface-PeriodicElement-67bc9e108e896f557103dfdba229bd86",
+            "id": "interface-PeriodicElement-9df4a32876b88ad4cd9765732bb9e192",
             "file": "src/app/modules/widget-app/performance-table/performance-table.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import {BehaviorSubject, Observable} from 'rxjs';\r\nimport { Component, OnInit } from '@angular/core';\r\n\r\nexport interface PeriodicElement {\r\n  name: string;\r\n  Due: number;\r\n  Actioned: number;\r\n  Outstanding: number;\r\n}\r\n\r\nconst ELEMENT_DATA: PeriodicElement[] = [\r\n  {name: 'Works start', Due: 11, Actioned: 3, Outstanding:8},\r\n  {name: 'Works Stop', Due: 13, Actioned:10, Outstanding:3},\r\n  {name: 'Permit Modification Requests', Due: 9,  Actioned: 8, Outstanding:1},\r\n  {name: 'Registrations', Due: 7,  Actioned: 22, Outstanding: 5},\r\n\r\n];\r\n\r\n\r\n\r\n@Component({\r\n  selector: 'app-performance-table',\r\n  templateUrl: './performance-table.component.html',\r\n  styleUrls: ['./performance-table.component.css']\r\n})\r\nexport class PerformanceTableComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n  displayedColumns: string[] = ['name' ,'Due', 'Actioned', 'Outstanding'];\r\n  dataSource = ELEMENT_DATA;\r\n}\r\n\r\n/**\r\n * Data source to provide what data should be rendered in the table. Note that the data source\r\n * can retrieve its data in any way. In this case, the data source is provided a reference\r\n * to a common data base, ExampleDatabase. It is not the data source's responsibility to manage\r\n * the underlying data. Instead, it only needs to take the data and send the table exactly what\r\n * should be rendered.\r\n */\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+            "sourceCode": "import {BehaviorSubject, Observable} from 'rxjs';\r\nimport { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\r\n\r\nexport interface PeriodicElement {\r\n  name: string;\r\n  Due: number;\r\n  Actioned: number;\r\n  Outstanding: number;\r\n}\r\n\r\nconst ELEMENT_DATA: PeriodicElement[] = [\r\n  {name: 'Works start', Due: 11, Actioned: 3, Outstanding:8},\r\n  {name: 'Works Stop', Due: 13, Actioned:10, Outstanding:3},\r\n  {name: 'Permit Modification Requests', Due: 9,  Actioned: 8, Outstanding:1},\r\n  {name: 'Registrations', Due: 7,  Actioned: 22, Outstanding: 5},\r\n\r\n];\r\n\r\n\r\n\r\n@Component({\r\n  selector: 'app-performance-table',\r\n  templateUrl: './performance-table.component.html',\r\n  styleUrls: ['./performance-table.component.css']\r\n})\r\nexport class PerformanceTableComponent implements OnInit {\r\n\r\n  title:string;\r\n  backgroundColor :any;\r\n  backgroundColor1:any\r\n  backgroundColor2:any\r\n  color:any;\r\n  height:any;\r\n  width:any;\r\n  border:any\r\n\r\n\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n  @Input()\r\n  displayedColumns: string[] = ['name' ,'Due', 'Actioned', 'Outstanding'];\r\n  dataSource = ELEMENT_DATA;\r\n\r\n\r\n  @Input()\r\n  size: 'small' | 'medium' | 'large' = 'medium';\r\n\r\n  @Input()\r\n  primary = false;\r\n\r\n\r\n\r\n\r\n@Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\r\n\r\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\r\n  }\r\n  public get classes1(): string[] {\r\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\r\n\r\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\r\n  }\r\n\r\n/**\r\n * Data source to provide what data should be rendered in the table. Note that the data source\r\n * can retrieve its data in any way. In this case, the data source is provided a reference\r\n * to a common data base, ExampleDatabase. It is not the data source's responsibility to manage\r\n * the underlying data. Instead, it only needs to take the data and send the table exactly what\r\n * should be rendered.\r\n */\r\n\r\n\r\n\r\n}\r\n\r\n\r\n\r\n",
             "properties": [
                 {
                     "name": "Actioned",
@@ -1008,12 +1008,12 @@
         },
         {
             "name": "PeriodicElement",
-            "id": "interface-PeriodicElement-40ae5971fe62910adeedbcb28679b174-1",
+            "id": "interface-PeriodicElement-751662ffe60dbf2293523289981dfd17-1",
             "file": "src/app/modules/widget-app/performance-table2/performance-table2.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import {BehaviorSubject, Observable} from 'rxjs';\r\nimport { Component, OnInit } from '@angular/core';\r\n\r\nexport interface PeriodicElement {\r\n  name: string;\r\n  received: number;\r\n  due: number;\r\n  actioned: number;\r\n}\r\n\r\nconst ELEMENT_DATA: PeriodicElement[] = [\r\n  {name: 'Defects', received: 1, due: 2, actioned:5},\r\n  {name: 'Comments', received: 2,  due:5, actioned:6},\r\n  {name: 'FPNs', received: 3,  due: 6, actioned: 5},\r\n\r\n];\r\n\r\n\r\n\r\n@Component({\r\n  selector: 'app-performance-table2',\r\n  templateUrl: './performance-table2.component.html',\r\n  styleUrls: ['./performance-table2.component.css']\r\n})\r\nexport class PerformanceTable2Component implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n  displayedColumns: string[] = ['name' ,'received', 'due', 'actioned'];\r\n  dataSource = ELEMENT_DATA;\r\n}\r\n\r\n/**\r\n * Data source to provide what data should be rendered in the table. Note that the data source\r\n * can retrieve its data in any way. In this case, the data source is provided a reference\r\n * to a common data base, ExampleDatabase. It is not the data source's responsibility to manage\r\n * the underlying data. Instead, it only needs to take the data and send the table exactly what\r\n * should be rendered.\r\n */\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+            "sourceCode": "import {BehaviorSubject, Observable} from 'rxjs';\r\nimport { Component, OnInit } from '@angular/core';\r\n\r\nexport interface PeriodicElement {\r\n  name: string;\r\n  received: number;\r\n  due: number;\r\n  actioned: number;\r\n}\r\n\r\nconst ELEMENT_DATA: PeriodicElement[] = [\r\n  {name: 'Defects', received: 1, due: 2, actioned:5},\r\n  {name: 'Comments', received: 2,  due:5, actioned:6},\r\n  {name: 'FPNs', received: 3,  due: 6, actioned: 5},\r\n\r\n];\r\n\r\n\r\n\r\n@Component({\r\n  selector: 'app-performance-table2',\r\n  templateUrl: './performance-table2.component.html',\r\n  styleUrls: ['./performance-table2.component.css']\r\n})\r\nexport class PerformanceTable2Component implements OnInit {\r\n\r\n\r\n  \r\n\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n  displayedColumns: string[] = ['name' ,'received', 'due', 'actioned'];\r\n  dataSource = ELEMENT_DATA;\r\n}\r\n\r\n/**\r\n * Data source to provide what data should be rendered in the table. Note that the data source\r\n * can retrieve its data in any way. In this case, the data source is provided a reference\r\n * to a common data base, ExampleDatabase. It is not the data source's responsibility to manage\r\n * the underlying data. Instead, it only needs to take the data and send the table exactly what\r\n * should be rendered.\r\n */\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
             "properties": [
                 {
                     "name": "actioned",
@@ -11943,7 +11943,7 @@
     "components": [
         {
             "name": "AdminLayoutComponent",
-            "id": "component-AdminLayoutComponent-59efc74dd553e0f1167560a3b4dd0013",
+            "id": "component-AdminLayoutComponent-08c9416f42a80ae184e301e77f1cea54",
             "file": "src/app/layout/admin-layout/admin-layout.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -11981,7 +11981,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\nimport {MatTableModule} from '@angular/material/table';\n@Component({\n  selector: 'app-admin-layout',\n  templateUrl: './admin-layout.component.html',\n  styleUrls: ['./admin-layout.component.css']\n})\nexport class AdminLayoutComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n\n@Component({\n  selector: 'app-admin-layout',\n  templateUrl: './admin-layout.component.html',\n  styleUrls: ['./admin-layout.component.css']\n})\nexport class AdminLayoutComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -12197,7 +12197,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-44f2f1e1b3a1e0ebc1e0edafd90d05c0",
+            "id": "component-ButtonComponent-1434c45530f1f4a0ba62deffd3d8e648",
             "file": "src/stories/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -12281,7 +12281,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nOptional click handler\n",
                     "description": "<p>Optional click handler</p>\n",
-                    "line": 46,
+                    "line": 47,
                     "type": "EventEmitter"
                 }
             ],
@@ -12294,7 +12294,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'storybook-button',\r\n  template: ` <button\r\n    type=\"button\"\r\n    (click)=\"onClick.emit($event)\"\r\n    [ngClass]=\"classes\"\r\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\r\n  >\r\n    {{ label }}\r\n  </button>`,\r\n  styleUrls: ['./button.css'],\r\n})\r\nexport default class ButtonComponent {\r\n  /**\r\n   * Is this the principal call to action on the page?\r\n   */\r\n  @Input()\r\n  primary = false;\r\n\r\n  /**\r\n   * What background color to use\r\n   */\r\n  @Input()\r\n  backgroundColor?: string;\r\n\r\n  /**\r\n   * How large should the button be?\r\n   */\r\n  @Input()\r\n  size: 'small' | 'medium' | 'large' = 'medium';\r\n\r\n  /**\r\n   * Button contents\r\n   *\r\n   * @required\r\n   */\r\n  @Input()\r\n  label = 'Button';\r\n\r\n  /**\r\n   * Optional click handler\r\n   */\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\r\n\r\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'storybook-button',\r\n  template: ` <button\r\n    type=\"button\"\r\n    (click)=\"onClick.emit($event)\"\r\n    [ngClass]=\"classes\"\r\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\r\n  >\r\n    {{ label }}\r\n  </button>`,\r\n  styleUrls: ['./button.css'],\r\n})\r\nexport default class ButtonComponent {\r\n  /**\r\n   * Is this the principal call to action on the page?\r\n   */\r\n  @Input()\r\n  primary = false;\r\n\r\n  /**\r\n   * What background color to use\r\n   */\r\n  @Input()\r\n  backgroundColor?: string;\r\n\r\n  /**\r\n   * How large should the button be?\r\n   */\r\n  @Input()\r\n  size: 'small' | 'medium' | 'large' = 'medium';\r\n\r\n  /**\r\n   * Button contents\r\n   *\r\n   * @required\r\n   */\r\n  @Input()\r\n  label = 'Button';\r\n\r\n  /**\r\n   * Optional click handler\r\n   */\r\n  \r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\r\n\r\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -12310,7 +12310,7 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 48
+                        "line": 49
                     }
                 }
             }
@@ -17670,7 +17670,7 @@
         },
         {
             "name": "PerformanceChartComponent",
-            "id": "component-PerformanceChartComponent-6229c50414502b6aa6c909ec6b45c9a6",
+            "id": "component-PerformanceChartComponent-cd21fa9760fc877ae42ddd7f55a6bb5c",
             "file": "src/app/modules/widget-app/performance-chart/performance-chart.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -17690,14 +17690,68 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "Data",
-                    "defaultValue": "[\r\n    ['Immediate', 22],\r\n   ['Minor', 28],\r\n  ['Standard', 38],\r\n  ['Major', 12]\r\n]",
+                    "name": "backgroundColor",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 17
+                    "line": 11
+                },
+                {
+                    "name": "border",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "color",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "Data",
+                    "defaultValue": "[\r\n    ['Immediate', 70],\r\n   ['Minor', 28],\r\n  ['Standard', 90],\r\n  ['Major', 55]\r\n]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 25
+                },
+                {
+                    "name": "height",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                },
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "width",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
                 }
             ],
             "methodsClass": [
@@ -17707,7 +17761,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 25,
+                    "line": 33,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -17717,7 +17771,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 12,
+                    "line": 20,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -17729,7 +17783,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-performance-chart',\r\n  templateUrl: './performance-chart.component.html',\r\n  styleUrls: ['./performance-chart.component.css']\r\n})\r\nexport class PerformanceChartComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(){\r\n    this.addBarSpans();\r\n  }\r\n\r\n\r\n  Data:any = [\r\n    ['Immediate', 22],\r\n   ['Minor', 28],\r\n  ['Standard', 38],\r\n  ['Major', 12]\r\n];\r\n\r\n\r\n     addBarSpans() {\r\n    const bars = document.getElementsByClassName('equalizer-bar');\r\n    const equalizer = document.getElementById(\"equalizer\");\r\n\r\n    for (let i = 0; i < this.Data.length; i++) {\r\n        let html = '';\r\n        for (let j = 0; j < 10; j++) {\r\n          let number= Number((this.Data[i][1]/10).toFixed());\r\n          if(j < number){\r\n            html += '<span class=\"active\"></span>';\r\n          }else{\r\n             html += '<span></span>';\r\n          }\r\n        }\r\n\r\n        equalizer.innerHTML += `<div class=\"equalizer-bar-wrapper\"><div class=\"equalizer-bar\">` + html + `</div><div class=\"info\"><p>` + this.Data[i][0] + `</p><p>` + this.Data[i][1] + `%</p</div></div>`;\r\n\r\n    }\r\n\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-performance-chart',\r\n  templateUrl: './performance-chart.component.html',\r\n  styleUrls: ['./performance-chart.component.css']\r\n})\r\nexport class PerformanceChartComponent implements OnInit {\r\n\r\n  title:string;\r\n  backgroundColor :any;\r\n  color:any;\r\n  height:any;\r\n  width:any;\r\n  border:any\r\n\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(){\r\n    this.addBarSpans();\r\n  }\r\n\r\n\r\n  Data:any = [\r\n    ['Immediate', 70],\r\n   ['Minor', 28],\r\n  ['Standard', 90],\r\n  ['Major', 55]\r\n];\r\n\r\n\r\n     addBarSpans() {\r\n    const bars = document.getElementsByClassName('equalizer-bar');\r\n    const equalizer = document.getElementById(\"equalizer\");\r\n\r\n    for (let i = 0; i < this.Data.length; i++) {\r\n        let html = '';\r\n        for (let j = 0; j < 10; j++) {\r\n          let number= Number((this.Data[i][1]/10).toFixed());\r\n          if(j < number){\r\n            html += '<span class=\"active\"></span>';\r\n          }else{\r\n             html += '<span></span>';\r\n          }\r\n        }\r\n\r\n        equalizer.innerHTML += `<div class=\"equalizer-bar-wrapper\"><div class=\"equalizer-bar\">` + html + `</div><div class=\"info\"><p>` + this.Data[i][0] + `</p><p>` + this.Data[i][1] + `%</p</div></div>`;\r\n\r\n    }\r\n\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -17744,16 +17798,16 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 8
+                "line": 15
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div id=\"equalizer\" class=\"equalizer\">\r\n</div>\r\n\r\n"
+            "templateData": "\r\n<p style=\"font-weight: 600;\">{{title}}</p>\r\n\r\n<div id=\"equalizer\" class=\"equalizer\" [ngStyle]=\"{ 'background-color': backgroundColor, 'color': color ,  'height': height , 'width':width, 'border':border }\">\r\n\r\n</div>\r\n\r\n"
         },
         {
             "name": "PerformanceTable2Component",
-            "id": "component-PerformanceTable2Component-40ae5971fe62910adeedbcb28679b174",
+            "id": "component-PerformanceTable2Component-751662ffe60dbf2293523289981dfd17",
             "file": "src/app/modules/widget-app/performance-table2/performance-table2.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -17780,7 +17834,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 33
+                    "line": 37
                 },
                 {
                     "name": "displayedColumns",
@@ -17790,7 +17844,7 @@
                     "type": "string[]",
                     "optional": false,
                     "description": "",
-                    "line": 32
+                    "line": 36
                 }
             ],
             "methodsClass": [
@@ -17800,7 +17854,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 29,
+                    "line": 33,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -17812,7 +17866,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {BehaviorSubject, Observable} from 'rxjs';\r\nimport { Component, OnInit } from '@angular/core';\r\n\r\nexport interface PeriodicElement {\r\n  name: string;\r\n  received: number;\r\n  due: number;\r\n  actioned: number;\r\n}\r\n\r\nconst ELEMENT_DATA: PeriodicElement[] = [\r\n  {name: 'Defects', received: 1, due: 2, actioned:5},\r\n  {name: 'Comments', received: 2,  due:5, actioned:6},\r\n  {name: 'FPNs', received: 3,  due: 6, actioned: 5},\r\n\r\n];\r\n\r\n\r\n\r\n@Component({\r\n  selector: 'app-performance-table2',\r\n  templateUrl: './performance-table2.component.html',\r\n  styleUrls: ['./performance-table2.component.css']\r\n})\r\nexport class PerformanceTable2Component implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n  displayedColumns: string[] = ['name' ,'received', 'due', 'actioned'];\r\n  dataSource = ELEMENT_DATA;\r\n}\r\n\r\n/**\r\n * Data source to provide what data should be rendered in the table. Note that the data source\r\n * can retrieve its data in any way. In this case, the data source is provided a reference\r\n * to a common data base, ExampleDatabase. It is not the data source's responsibility to manage\r\n * the underlying data. Instead, it only needs to take the data and send the table exactly what\r\n * should be rendered.\r\n */\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+            "sourceCode": "import {BehaviorSubject, Observable} from 'rxjs';\r\nimport { Component, OnInit } from '@angular/core';\r\n\r\nexport interface PeriodicElement {\r\n  name: string;\r\n  received: number;\r\n  due: number;\r\n  actioned: number;\r\n}\r\n\r\nconst ELEMENT_DATA: PeriodicElement[] = [\r\n  {name: 'Defects', received: 1, due: 2, actioned:5},\r\n  {name: 'Comments', received: 2,  due:5, actioned:6},\r\n  {name: 'FPNs', received: 3,  due: 6, actioned: 5},\r\n\r\n];\r\n\r\n\r\n\r\n@Component({\r\n  selector: 'app-performance-table2',\r\n  templateUrl: './performance-table2.component.html',\r\n  styleUrls: ['./performance-table2.component.css']\r\n})\r\nexport class PerformanceTable2Component implements OnInit {\r\n\r\n\r\n  \r\n\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n  displayedColumns: string[] = ['name' ,'received', 'due', 'actioned'];\r\n  dataSource = ELEMENT_DATA;\r\n}\r\n\r\n/**\r\n * Data source to provide what data should be rendered in the table. Note that the data source\r\n * can retrieve its data in any way. In this case, the data source is provided a reference\r\n * to a common data base, ExampleDatabase. It is not the data source's responsibility to manage\r\n * the underlying data. Instead, it only needs to take the data and send the table exactly what\r\n * should be rendered.\r\n */\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -17919,7 +17973,7 @@
         },
         {
             "name": "PerformanceTableComponent",
-            "id": "component-PerformanceTableComponent-67bc9e108e896f557103dfdba229bd86",
+            "id": "component-PerformanceTableComponent-9df4a32876b88ad4cd9765732bb9e192",
             "file": "src/app/modules/widget-app/performance-table/performance-table.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -17935,9 +17989,88 @@
                 "./performance-table.component.html"
             ],
             "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "displayedColumns",
+                    "defaultValue": "['name' ,'Due', 'Actioned', 'Outstanding']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 44,
+                    "type": "string[]"
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 52,
+                    "type": "boolean"
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 49,
+                    "type": "\"small\" | \"medium\" | \"large\""
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 58,
+                    "type": "EventEmitter"
+                }
+            ],
             "propertiesClass": [
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 29
+                },
+                {
+                    "name": "backgroundColor1",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 30
+                },
+                {
+                    "name": "backgroundColor2",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 31
+                },
+                {
+                    "name": "border",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 35
+                },
+                {
+                    "name": "color",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 32
+                },
                 {
                     "name": "dataSource",
                     "defaultValue": "ELEMENT_DATA",
@@ -17946,17 +18079,34 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 34
+                    "line": 45
                 },
                 {
-                    "name": "displayedColumns",
-                    "defaultValue": "['name' ,'Due', 'Actioned', 'Outstanding']",
+                    "name": "height",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "string[]",
+                    "type": "any",
                     "optional": false,
                     "description": "",
                     "line": 33
+                },
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 28
+                },
+                {
+                    "name": "width",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 34
                 }
             ],
             "methodsClass": [
@@ -17966,7 +18116,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 30,
+                    "line": 41,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -17978,11 +18128,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {BehaviorSubject, Observable} from 'rxjs';\r\nimport { Component, OnInit } from '@angular/core';\r\n\r\nexport interface PeriodicElement {\r\n  name: string;\r\n  Due: number;\r\n  Actioned: number;\r\n  Outstanding: number;\r\n}\r\n\r\nconst ELEMENT_DATA: PeriodicElement[] = [\r\n  {name: 'Works start', Due: 11, Actioned: 3, Outstanding:8},\r\n  {name: 'Works Stop', Due: 13, Actioned:10, Outstanding:3},\r\n  {name: 'Permit Modification Requests', Due: 9,  Actioned: 8, Outstanding:1},\r\n  {name: 'Registrations', Due: 7,  Actioned: 22, Outstanding: 5},\r\n\r\n];\r\n\r\n\r\n\r\n@Component({\r\n  selector: 'app-performance-table',\r\n  templateUrl: './performance-table.component.html',\r\n  styleUrls: ['./performance-table.component.css']\r\n})\r\nexport class PerformanceTableComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n  displayedColumns: string[] = ['name' ,'Due', 'Actioned', 'Outstanding'];\r\n  dataSource = ELEMENT_DATA;\r\n}\r\n\r\n/**\r\n * Data source to provide what data should be rendered in the table. Note that the data source\r\n * can retrieve its data in any way. In this case, the data source is provided a reference\r\n * to a common data base, ExampleDatabase. It is not the data source's responsibility to manage\r\n * the underlying data. Instead, it only needs to take the data and send the table exactly what\r\n * should be rendered.\r\n */\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
+            "sourceCode": "import {BehaviorSubject, Observable} from 'rxjs';\r\nimport { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\r\n\r\nexport interface PeriodicElement {\r\n  name: string;\r\n  Due: number;\r\n  Actioned: number;\r\n  Outstanding: number;\r\n}\r\n\r\nconst ELEMENT_DATA: PeriodicElement[] = [\r\n  {name: 'Works start', Due: 11, Actioned: 3, Outstanding:8},\r\n  {name: 'Works Stop', Due: 13, Actioned:10, Outstanding:3},\r\n  {name: 'Permit Modification Requests', Due: 9,  Actioned: 8, Outstanding:1},\r\n  {name: 'Registrations', Due: 7,  Actioned: 22, Outstanding: 5},\r\n\r\n];\r\n\r\n\r\n\r\n@Component({\r\n  selector: 'app-performance-table',\r\n  templateUrl: './performance-table.component.html',\r\n  styleUrls: ['./performance-table.component.css']\r\n})\r\nexport class PerformanceTableComponent implements OnInit {\r\n\r\n  title:string;\r\n  backgroundColor :any;\r\n  backgroundColor1:any\r\n  backgroundColor2:any\r\n  color:any;\r\n  height:any;\r\n  width:any;\r\n  border:any\r\n\r\n\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n  @Input()\r\n  displayedColumns: string[] = ['name' ,'Due', 'Actioned', 'Outstanding'];\r\n  dataSource = ELEMENT_DATA;\r\n\r\n\r\n  @Input()\r\n  size: 'small' | 'medium' | 'large' = 'medium';\r\n\r\n  @Input()\r\n  primary = false;\r\n\r\n\r\n\r\n\r\n@Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\r\n\r\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\r\n  }\r\n  public get classes1(): string[] {\r\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\r\n\r\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\r\n  }\r\n\r\n/**\r\n * Data source to provide what data should be rendered in the table. Note that the data source\r\n * can retrieve its data in any way. In this case, the data source is provided a reference\r\n * to a common data base, ExampleDatabase. It is not the data source's responsibility to manage\r\n * the underlying data. Instead, it only needs to take the data and send the table exactly what\r\n * should be rendered.\r\n */\r\n\r\n\r\n\r\n}\r\n\r\n\r\n\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "table {\r\n  width: 100%;\r\n}\r\n\r\nth {\r\n  text-align: center;\r\nwidth: 100px;\r\n  font-weight: 400;\r\n}\r\n\r\ntd{\r\n  text-align: center;\r\n  font-weight: 800;\r\n/* margin: 20px; */\r\n\r\n\r\n}\r\n.mat-cell, .mat-footer-cell {\r\n  /* font-size: 1px !important; */\r\n}\r\ntr.mat-header-row {\r\n  height: 25px !important;\r\n}\r\n\r\n.border-color\r\n{\r\n  border-color: #3C6BAF;\r\n  border-radius: 20px;\r\n  font-size: 12px;\r\n  /* margin-right: 25px;\r\n\r\n  margin-left: 1px; */\r\n  color: #3C6BAF;\r\n  font-weight: 500;\r\n\r\n\r\n}\r\n.th-color1{\r\n  background-color: #F0B018;\r\n  color: #fff;\r\n  font-size: 12px;\r\n /* margin: 4px; */\r\n text-align: center;\r\n /* padding: 5px; */\r\n width: 170px;\r\n\r\n}\r\n\r\n.th-color2{\r\n  background-color: #418B12;\r\n  color: #fff;\r\n  font-size: 12px;\r\n  text-align: center;\r\n  /* padding: 5px; */\r\n\r\n\r\n}\r\n.th-color3{\r\n  background-color:#DC2C2B;\r\n  color: #fff;\r\n  font-size: 12px;\r\n  text-align: center;\r\n  /* padding: 5px; */\r\n\r\n}\r\n\r\np {\r\n  /* margin-top: 0 !important;\r\n  margin-bottom: 1rem !important; */\r\n}\r\n\r\n\r\n .td-border {\r\n    margin-right: 17px;\r\n    border: 1px #3C6BAF solid;\r\n    color: #3C6BAF;\r\n    border-radius: 10px;\r\n    font-size: 12px;\r\n    text-indent: 1;\r\n    margin-top: 15px;\r\n    font-weight: 500;\r\n    width: 120px;\r\n    padding: 2px;\r\n\r\n}\r\nth.mat-header-cell{\r\n  padding: 5px !important;\r\n  border-bottom-width: 1px !important;\r\n  border-bottom-style: solid !important;\r\n}\r\n\r\nth.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {\r\n  padding-left: 0px !important;\r\n}\r\n\r\n",
+                    "data": "table {\r\n  width: 100%;\r\n}\r\n\r\nth {\r\n  text-align: center;\r\nwidth: 100px;\r\n  font-weight: 400;\r\n}\r\n\r\ntd{\r\n  text-align: center;\r\n  font-weight: 800;\r\n/* margin: 20px; */\r\n\r\n\r\n}\r\n.mat-cell, .mat-footer-cell {\r\n  /* font-size: 1px !important; */\r\n}\r\ntr.mat-header-row {\r\n  height: 25px !important;\r\n}\r\n\r\n.border-color\r\n{\r\n  border-color: #3C6BAF;\r\n  border-radius: 20px;\r\n  font-size: 12px;\r\n  /* margin-right: 25px;\r\n\r\n  margin-left: 1px; */\r\n  color: #3C6BAF;\r\n  font-weight: 500;\r\n\r\n\r\n}\r\n.th-color1{\r\n  background-color: #F0B018;\r\n  color: #fff;\r\n  font-size: 12px;\r\n /* margin: 4px; */\r\n text-align: center;\r\n /* padding: 5px; */\r\n width: 170px;\r\n\r\n}\r\n\r\n.th-color2{\r\n  background-color: #418B12;\r\n  color: #fff;\r\n  font-size: 12px;\r\n  text-align: center;\r\n  /* padding: 5px; */\r\n\r\n\r\n}\r\n.th-color3{\r\n  background-color:#DC2C2B;\r\n  color: #fff;\r\n  font-size: 12px;\r\n  text-align: center;\r\n  /* padding: 5px; */\r\n\r\n}\r\n\r\np {\r\n  /* margin-top: 0 !important;\r\n  margin-bottom: 1rem !important; */\r\n}\r\n\r\n\r\n .td-border {\r\n    margin-right: 17px;\r\n    border: 1px #3C6BAF solid;\r\n    color: #3C6BAF;\r\n    border-radius: 10px;\r\n    font-size: 12px;\r\n    text-indent: 1;\r\n    margin-top: 15px;\r\n    font-weight: 500;\r\n    width: 120px;\r\n    padding: 2px;\r\n\r\n}\r\nth.mat-header-cell{\r\n  padding: 5px !important;\r\n  border-bottom-width: 1px !important;\r\n  border-bottom-style: solid !important;\r\n}\r\n\r\nth.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {\r\n  padding-left: 0px !important;\r\n}\r\n\r\n\r\n\r\n\r\n.storybook-button {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  font-weight: 700;\r\n  border: 0;\r\n  border-radius: 3em;\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  line-height: 1;\r\n}\r\n.storybook-button--primary {\r\n  color: white;\r\n  background-color: #1ea7fd;\r\n}\r\n.storybook-button--secondary {\r\n  color: #333;\r\n  background-color: transparent;\r\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\r\n}\r\n.storybook-button--small {\r\n  font-size: 12px;\r\n  /* padding: 10px 16px; */\r\n}\r\n.storybook-button--medium {\r\n  font-size: 16px;\r\n  /* padding: 11px 20px; */\r\n}\r\n.storybook-button--large {\r\n  font-size: 20px;\r\n  /* padding: 12px 24px; */\r\n}\r\n\r\n",
                     "styleUrl": "./performance-table.component.css"
                 }
             ],
@@ -17993,12 +18143,32 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 26
+                "line": 35
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<table mat-table [dataSource]=\"dataSource\" >\r\n\r\n  <!--- Note that these columns can be defined in any order.\r\n        The actual rendered columns are set as a property on the row definition\" -->\r\n\r\n         <!-- Name Column -->\r\n         <ng-container matColumnDef=\"name\" >\r\n          <th  *matHeaderCellDef> </th>\r\n          <td mat-cell *matCellDef=\"let element\" ><p class=\"td-border\" >{{element.name}}</p> </td>\r\n        </ng-container>\r\n\r\n  <!-- Position Column -->\r\n  <ng-container matColumnDef=\"Due\">\r\n    <th mat-header-cell class=\"th-color1\"  *matHeaderCellDef> Due </th>\r\n    <td mat-cell *matCellDef=\"let element\"> {{element.Due}} </td>\r\n  </ng-container>\r\n\r\n\r\n\r\n  <!-- Weight Column -->\r\n  <ng-container matColumnDef=\"Actioned\">\r\n    <th class=\"th-color2\" mat-header-cell *matHeaderCellDef> Actioned </th>\r\n    <td mat-cell *matCellDef=\"let element\"> {{element.Actioned}} </td>\r\n  </ng-container>\r\n\r\n  <!-- Symbol Column -->\r\n  <ng-container matColumnDef=\"Outstanding\">\r\n    <th class=\"th-color3\" mat-header-cell *matHeaderCellDef> Outstanding </th>\r\n    <td mat-cell *matCellDef=\"let element\"> {{element.Outstanding}} </td>\r\n  </ng-container>\r\n\r\n  <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n  <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\r\n</table>\r\n\r\n\r\n"
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 60
+                    }
+                },
+                "classes1": {
+                    "name": "classes1",
+                    "getSignature": {
+                        "name": "classes1",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 65
+                    }
+                }
+            },
+            "templateData": "<p style=\"font-weight: 600;\">{{title}}</p>\r\n<table mat-table [dataSource]=\"dataSource\"   [ngStyle]=\"{'height': height , 'width':width}\" >\r\n\r\n  <!--- Note that these columns can be defined in any order.\r\n        The actual rendered columns are set as a property on the row definition\" -->\r\n\r\n         <!-- Name Column -->\r\n         <ng-container matColumnDef=\"name\" >\r\n          <th  *matHeaderCellDef> </th>\r\n          <td mat-cell *matCellDef=\"let element\" ><p class=\"td-border\" >{{element.name}}</p> </td>\r\n        </ng-container>\r\n\r\n  <!-- Position Column -->\r\n  <ng-container matColumnDef=\"Due\">\r\n    <th  [ngClass]=\"classes\" [ngStyle]=\"{'backgroundColor':backgroundColor,'color':color}\" mat-header-cell class=\"th-color1\"  *matHeaderCellDef> Due </th>\r\n    <td mat-cell *matCellDef=\"let element\" > {{element.Due}} </td>\r\n  </ng-container>\r\n\r\n\r\n\r\n  <!-- Weight Column -->\r\n  <ng-container matColumnDef=\"Actioned\">\r\n    <th class=\"th-color2\"  [ngStyle]=\"{'backgroundColor':backgroundColor1,'color':color}\" mat-header-cell *matHeaderCellDef> Actioned </th>\r\n    <td mat-cell *matCellDef=\"let element\"> {{element.Actioned}} </td>\r\n  </ng-container>\r\n\r\n  <!-- Symbol Column -->\r\n  <ng-container matColumnDef=\"Outstanding\">\r\n    <th class=\"th-color3\"  [ngStyle]=\"{'backgroundColor':backgroundColor2,'color':color}\" mat-header-cell *matHeaderCellDef> Outstanding </th>\r\n    <td mat-cell *matCellDef=\"let element\"> {{element.Outstanding}} </td>\r\n  </ng-container>\r\n\r\n  <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n  <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\r\n</table>\r\n\r\n\r\n"
         },
         {
             "name": "ProgressBarA1Component",
@@ -19644,6 +19814,16 @@
                 "name": "actionsData",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/modules/widget-app/bar-chart/bar-chart.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n    onGetValues: action('getValues'),\r\n}"
+            },
+            {
+                "name": "actionsData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/modules/widget-app/performace-card1/performance-card1.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -19659,6 +19839,76 @@
                 "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{\r\n    onGetValues: action('getValues'),\r\n}"
+            },
+            {
+                "name": "actionsData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/modules/widget-app/performance-chart/performance-chart.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n    onGetValues: action('getValues'),\r\n    controls: { expanded: true },\r\n}"
+            },
+            {
+                "name": "actionsData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/modules/widget-app/performance-table/performance-table.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n    onGetValues: action('getValues'),\r\n}"
+            },
+            {
+                "name": "actionsData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/modules/widget-app/performance-table2/performance-table2.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n    onGetValues: action('getValues'),\r\n}"
+            },
+            {
+                "name": "actionsData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/modules/widget-app/performance-table3/performance-table3.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n    onGetValues: action('getValues'),\r\n}"
+            },
+            {
+                "name": "actionsData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/modules/widget-app/progress-bar/progrogess-bar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n    onGetValues: action('getValues'),\r\n}"
+            },
+            {
+                "name": "actionsData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/modules/widget-app/radio-button/radio-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n    onGetValues: action('getValues'),\r\n}"
+            },
+            {
+                "name": "Border",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/modules/widget-app/performance-chart/performance-chart.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "context",
@@ -19691,6 +19941,26 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "DebugMode",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/modules/widget-app/progress-bar/progrogess-bar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/modules/widget-app/bar-chart/bar-chart.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -19705,6 +19975,66 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/modules/widget-app/performance-card2/performance-card2.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/modules/widget-app/performance-chart/performance-chart.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/modules/widget-app/performance-table/performance-table.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/modules/widget-app/performance-table2/performance-table2.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/modules/widget-app/performance-table3/performance-table3.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/modules/widget-app/progress-bar/progrogess-bar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/modules/widget-app/radio-button/radio-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -19870,10 +20200,30 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "SelfDataLoad",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/modules/widget-app/progress-bar/progrogess-bar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "SuccessBehavior",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/modules/widget-app/performace-card1/performance-card1.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -19913,6 +20263,16 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/modules/widget-app/bar-chart/bar-chart.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<BarChartComponent>",
+                "defaultValue": "args => ({\r\n    props: {\r\n      ...args,\r\n\r\n\r\n    },\r\n  })"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/modules/widget-app/performace-card1/performance-card1.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -19928,6 +20288,76 @@
                 "deprecationMessage": "",
                 "type": "Story<PerformanceCard2Component>",
                 "defaultValue": "args => ({\r\n    props: {\r\n      ...args,\r\n      //  onGetValues: actionsData.onGetValues,\r\n    //   onArchiveTask: TaskStories.actionsData.onArchiveTask,\r\n\r\n    },\r\n  })"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/modules/widget-app/performance-chart/performance-chart.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<PerformanceChartComponent>",
+                "defaultValue": "args => ({\r\n    props: {\r\n      ...args,\r\n       },\r\n  })"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/modules/widget-app/performance-table/performance-table.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<PerformanceTableComponent>",
+                "defaultValue": "args => ({\r\n    props: {\r\n      ...args,\r\n      //  onGetValues: actionsData.onGetValues,\r\n    //   onArchiveTask: TaskStories.actionsData.onArchiveTask,\r\n\r\n    },\r\n  })"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/modules/widget-app/performance-table2/performance-table2.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<PerformanceTable2Component>",
+                "defaultValue": "args => ({\r\n    props: {\r\n      ...args,\r\n      //  onGetValues: actionsData.onGetValues,\r\n    //   onArchiveTask: TaskStories.actionsData.onArchiveTask,\r\n\r\n    },\r\n  })"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/modules/widget-app/performance-table3/performance-table3.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<PerformanceTable3Component>",
+                "defaultValue": "args => ({\r\n    props: {\r\n      ...args,\r\n      //  onGetValues: actionsData.onGetValues,\r\n    //   onArchiveTask: TaskStories.actionsData.onArchiveTask,\r\n\r\n    },\r\n  })"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/modules/widget-app/progress-bar/progrogess-bar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ProgressBarComponent>",
+                "defaultValue": "args => ({\r\n    props: {\r\n      ...args,\r\n      //  onGetValues: actionsData.onGetValues,\r\n    //   onArchiveTask: TaskStories.actionsData.onArchiveTask,\r\n\r\n    },\r\n  })"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/modules/widget-app/radio-button/radio-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<RadioButtonComponent>",
+                "defaultValue": "args => ({\r\n    props: {\r\n      ...args,\r\n      //  onGetValues: actionsData.onGetValues,\r\n    //   onArchiveTask: TaskStories.actionsData.onArchiveTask,\r\n\r\n    },\r\n  })"
+            },
+            {
+                "name": "Title",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/modules/widget-app/performance-chart/performance-chart.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             }
         ],
         "functions": [
@@ -21662,6 +22092,38 @@
                     "type": "any"
                 }
             ],
+            "src/app/modules/widget-app/bar-chart/bar-chart.stories.ts": [
+                {
+                    "name": "actionsData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/modules/widget-app/bar-chart/bar-chart.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n    onGetValues: action('getValues'),\r\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/modules/widget-app/bar-chart/bar-chart.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/modules/widget-app/bar-chart/bar-chart.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<BarChartComponent>",
+                    "defaultValue": "args => ({\r\n    props: {\r\n      ...args,\r\n\r\n\r\n    },\r\n  })"
+                }
+            ],
             "src/app/modules/widget-app/performace-card1/performance-card1.stories.ts": [
                 {
                     "name": "actionsData",
@@ -21695,6 +22157,16 @@
                 },
                 {
                     "name": "SelfDataLoad",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/modules/widget-app/performace-card1/performance-card1.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "SuccessBehavior",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/modules/widget-app/performace-card1/performance-card1.stories.ts",
@@ -21763,6 +22235,238 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<PerformanceCard2Component>",
+                    "defaultValue": "args => ({\r\n    props: {\r\n      ...args,\r\n      //  onGetValues: actionsData.onGetValues,\r\n    //   onArchiveTask: TaskStories.actionsData.onArchiveTask,\r\n\r\n    },\r\n  })"
+                }
+            ],
+            "src/app/modules/widget-app/performance-chart/performance-chart.stories.ts": [
+                {
+                    "name": "actionsData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/modules/widget-app/performance-chart/performance-chart.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n    onGetValues: action('getValues'),\r\n    controls: { expanded: true },\r\n}"
+                },
+                {
+                    "name": "Border",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/modules/widget-app/performance-chart/performance-chart.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/modules/widget-app/performance-chart/performance-chart.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/modules/widget-app/performance-chart/performance-chart.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<PerformanceChartComponent>",
+                    "defaultValue": "args => ({\r\n    props: {\r\n      ...args,\r\n       },\r\n  })"
+                },
+                {
+                    "name": "Title",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/modules/widget-app/performance-chart/performance-chart.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
+            "src/app/modules/widget-app/performance-table/performance-table.stories.ts": [
+                {
+                    "name": "actionsData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/modules/widget-app/performance-table/performance-table.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n    onGetValues: action('getValues'),\r\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/modules/widget-app/performance-table/performance-table.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/modules/widget-app/performance-table/performance-table.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<PerformanceTableComponent>",
+                    "defaultValue": "args => ({\r\n    props: {\r\n      ...args,\r\n      //  onGetValues: actionsData.onGetValues,\r\n    //   onArchiveTask: TaskStories.actionsData.onArchiveTask,\r\n\r\n    },\r\n  })"
+                }
+            ],
+            "src/app/modules/widget-app/performance-table2/performance-table2.stories.ts": [
+                {
+                    "name": "actionsData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/modules/widget-app/performance-table2/performance-table2.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n    onGetValues: action('getValues'),\r\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/modules/widget-app/performance-table2/performance-table2.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/modules/widget-app/performance-table2/performance-table2.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<PerformanceTable2Component>",
+                    "defaultValue": "args => ({\r\n    props: {\r\n      ...args,\r\n      //  onGetValues: actionsData.onGetValues,\r\n    //   onArchiveTask: TaskStories.actionsData.onArchiveTask,\r\n\r\n    },\r\n  })"
+                }
+            ],
+            "src/app/modules/widget-app/performance-table3/performance-table3.stories.ts": [
+                {
+                    "name": "actionsData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/modules/widget-app/performance-table3/performance-table3.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n    onGetValues: action('getValues'),\r\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/modules/widget-app/performance-table3/performance-table3.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/modules/widget-app/performance-table3/performance-table3.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<PerformanceTable3Component>",
+                    "defaultValue": "args => ({\r\n    props: {\r\n      ...args,\r\n      //  onGetValues: actionsData.onGetValues,\r\n    //   onArchiveTask: TaskStories.actionsData.onArchiveTask,\r\n\r\n    },\r\n  })"
+                }
+            ],
+            "src/app/modules/widget-app/progress-bar/progrogess-bar.stories.ts": [
+                {
+                    "name": "actionsData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/modules/widget-app/progress-bar/progrogess-bar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n    onGetValues: action('getValues'),\r\n}"
+                },
+                {
+                    "name": "DebugMode",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/modules/widget-app/progress-bar/progrogess-bar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/modules/widget-app/progress-bar/progrogess-bar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "SelfDataLoad",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/modules/widget-app/progress-bar/progrogess-bar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/modules/widget-app/progress-bar/progrogess-bar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ProgressBarComponent>",
+                    "defaultValue": "args => ({\r\n    props: {\r\n      ...args,\r\n      //  onGetValues: actionsData.onGetValues,\r\n    //   onArchiveTask: TaskStories.actionsData.onArchiveTask,\r\n\r\n    },\r\n  })"
+                }
+            ],
+            "src/app/modules/widget-app/radio-button/radio-button.stories.ts": [
+                {
+                    "name": "actionsData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/modules/widget-app/radio-button/radio-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n    onGetValues: action('getValues'),\r\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/modules/widget-app/radio-button/radio-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/modules/widget-app/radio-button/radio-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<RadioButtonComponent>",
                     "defaultValue": "args => ({\r\n    props: {\r\n      ...args,\r\n      //  onGetValues: actionsData.onGetValues,\r\n    //   onArchiveTask: TaskStories.actionsData.onArchiveTask,\r\n\r\n    },\r\n  })"
                 }
             ],
@@ -23947,6 +24651,36 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/modules/widget-app/bar-chart/bar-chart.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "actionsData",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/widget-app/bar-chart/bar-chart.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/widget-app/bar-chart/bar-chart.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/modules/widget-app/company/company-form/company-form.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -24090,6 +24824,16 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "SuccessBehavior",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/widget-app/performace-card1/performance-card1.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -24187,7 +24931,57 @@
                 "linktype": "component",
                 "name": "PerformanceChartComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/11",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/widget-app/performance-chart/performance-chart.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "actionsData",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/widget-app/performance-chart/performance-chart.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Border",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/widget-app/performance-chart/performance-chart.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/widget-app/performance-chart/performance-chart.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/widget-app/performance-chart/performance-chart.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Title",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -24196,7 +24990,7 @@
                 "linktype": "component",
                 "name": "PerformanceTableComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/16",
                 "status": "low"
             },
             {
@@ -24214,6 +25008,36 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "ELEMENT_DATA",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/widget-app/performance-table/performance-table.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "actionsData",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/widget-app/performance-table/performance-table.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/widget-app/performance-table/performance-table.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -24247,6 +25071,36 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/modules/widget-app/performance-table2/performance-table2.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "actionsData",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/widget-app/performance-table2/performance-table2.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/widget-app/performance-table2/performance-table2.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/modules/widget-app/performance-table3/performance-table3.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -24270,6 +25124,36 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "ELEMENT_DATA",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/widget-app/performance-table3/performance-table3.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "actionsData",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/widget-app/performance-table3/performance-table3.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/widget-app/performance-table3/performance-table3.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -24365,6 +25249,56 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/modules/widget-app/progress-bar/progrogess-bar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "actionsData",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/widget-app/progress-bar/progrogess-bar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DebugMode",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/widget-app/progress-bar/progrogess-bar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/widget-app/progress-bar/progrogess-bar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SelfDataLoad",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/widget-app/progress-bar/progrogess-bar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/modules/widget-app/radio-button/radio-button-model.ts",
                 "type": "class",
                 "linktype": "classe",
@@ -24398,6 +25332,36 @@
                 "name": "RadioButtonComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/widget-app/radio-button/radio-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "actionsData",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/widget-app/radio-button/radio-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/widget-app/radio-button/radio-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
